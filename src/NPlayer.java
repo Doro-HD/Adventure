@@ -13,4 +13,8 @@ public class NPlayer {
         this.playerLocation = newPlayerLocation;
     }
 
+    public void test() {
+        System.out.println("test");
+    }
+
 }
