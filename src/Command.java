@@ -15,7 +15,7 @@ public class Command {
         System.out.println("write look if you wanna se which room you are in");
         System.out.println("if you forget the controls just write info, i, help or h");
         System.out.println("if you want to quit the game just write q or quit\n");
-    }
+    } //Denne
 
     public void go(String playerInput, Room currentRoom, Room endRoom) {
 

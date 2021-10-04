@@ -27,6 +27,10 @@ public class Room {
         this.description = description;
     }
 
+    public String getDescription(){
+        return description;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
