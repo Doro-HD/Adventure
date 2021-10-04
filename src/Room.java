@@ -89,6 +89,7 @@ public class Room {
     }
 
     //Sets the vertical exits, north and south
+    //The parameters represents the room that calls this method exits to the north and south cardinal directions
     public void setVerticalExits(Room northExit, Room southExit) {
         this.setNorthExit(northExit);
         this.setSouthExit(southExit);
