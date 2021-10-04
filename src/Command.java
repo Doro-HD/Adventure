@@ -1,6 +1,6 @@
 public class Command {
 
-    private Player creator; //Making a attribute  called creater from the player class
+    private Player creator; //Making an attribute  called creater from the player class
 
     public Command(Player creator) {
         this.creator = creator;
