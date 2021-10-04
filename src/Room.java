@@ -1,14 +1,15 @@
 public class Room {
 
     private String name;
-
+    private String description;
     private Room northExit;
     private Room southExit;
     private Room eastExit;
     private Room westExit;
 
-    public Room(String name) {
+    public Room(String name, String description) {
         this.setName(name);
+        this.setDescription(description);
     }
 
     public void printExits() {
@@ -20,6 +21,10 @@ public class Room {
 
     public String toString() {
         return this.name;
+    }
+
+    public void setDescription(String description){
+        this.description = description;
     }
 
     public void setName(String name) {
