@@ -11,7 +11,11 @@ public class DPlayer {
     }
 
     public void setCurrentRoom(Room newPlayerPosition) {
-        this.currentRoom = newPlayerPosition;
+        if (newPlayerPosition != null) {
+            this.currentRoom = newPlayerPosition;
+        } else {
+            System.out.println("you cannot go that way");
+        }
     }
 
     public Room getCurrentRoom() {

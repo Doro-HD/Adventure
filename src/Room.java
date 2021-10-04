@@ -1,5 +1,6 @@
 public class Room {
-    /*private String name;
+    /*
+    private String name;
 
     private Room northExit;
     private Room southExit;
