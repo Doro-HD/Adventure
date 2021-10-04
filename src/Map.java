@@ -2,21 +2,26 @@ public class Map {
     private Room startRoom;
     private Room endRoom;
 
-
+    //Constructor calls method that sets up a 3x3 grid map, later it might be able to set up different maps depending on user input.
     public Map() {
-        Room room1 = new Room("test1","");
-        Room room2 = new Room("test2","");
-        Room room3 = new Room("test3","");
+        setup3x3Map();
+    }
 
-        Room room4 = new Room("test4","");
-        Room room5 = new Room("test5","");
-        Room room6 = new Room("test6","");
-        Room room7 = new Room("test7","");
-        Room room8 = new Room("test8","");
-        Room room9 = new Room("test9","");
+    //Method for setting up a 3x3 grid map
+    //Creates 9 rooms and connects them to one another
+    public void setup3x3Map() {
+        Room room1 = new Room("test1", "This is test1");
+        Room room2 = new Room("test2", "This is test2");
+        Room room3 = new Room("test3","This is test3");
+        Room room4 = new Room("test4", "This is test4");
+        Room room5 = new Room("test5", "This is test5");
+        Room room6 = new Room("test6", "This is test6");
+        Room room7 = new Room("test7", "This is test7");
+        Room room8 = new Room("test8", "This is test8");
+        Room room9 = new Room("test9", "This is test9");
 
         this.setStartRoom(room1);
-        this.endRoom = room5;
+        this.setEndRoom(room5);
 
         //Sets the exits to form a 3x3 square grid.
         //When a room's westExit is set, the room set as that exit will automatically add the other room as it's east exit

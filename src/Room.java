@@ -2,6 +2,8 @@ public class Room {
 
     private String name;
     private String description;
+
+    //Each exit is either a reference to another room or is null
     private Room northExit;
     private Room southExit;
     private Room eastExit;
@@ -35,6 +37,8 @@ public class Room {
         this.name = name;
     }
 
+    //Each method that sets a room exit checks if the room parameters opposite exit, north and south, east and west, is null
+    //If the room parameters opposite exit is null the method automatically sets the room parameters opposite exit as this
     public void setNorthExit(Room room) {
         this.northExit = room;
 
@@ -50,7 +54,10 @@ public class Room {
     public void setSouthExit(Room room) {
         this.southExit = room;
 
-        room.setNorthExit(this);
+        if (room.northExit == null) {
+            room.setNorthExit(this);
+        }
+
     }
 
     public Room getSouthExit() {
@@ -81,16 +88,19 @@ public class Room {
         return this.eastExit;
     }
 
+    //Sets the vertical exits, north and south
     public void setVerticalExits(Room northExit, Room southExit) {
         this.setNorthExit(northExit);
         this.setSouthExit(southExit);
     }
 
+    //Sets the horizontal exits, west and east
     public void setHorizontalExits(Room westExit, Room eastExit) {
         this.setEastExit(eastExit);
         this.setWestExit(westExit);
     }
 
+    //Sets this north, west and east exits to the given parameters
     public void setThreeWay(Room northExit, Room westExit, Room eastExit) {
         this.setNorthExit(northExit);
         this.setWestExit(westExit);

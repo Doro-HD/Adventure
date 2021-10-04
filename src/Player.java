@@ -4,7 +4,7 @@ public class Player {
 
     public Player(String name, Room startPosition) {
         this.setName(name);
-        this.currentRoom = startPosition;
+        this.setCurrentRoom(startPosition, false);
     }
 
     public void setName(String name) {
@@ -15,15 +15,20 @@ public class Player {
         return this.name;
     }
 
-    public void setCurrentRoom(Room newPlayerPosition) {
+    //Sets the players current position to be a new room unless that room is null
+    //The argument given in the client code is a reference to another room
+    public void setCurrentRoom(Room newPlayerPosition, boolean printLocation) {
         if (newPlayerPosition != null) {
             this.currentRoom = newPlayerPosition;
-            System.out.println("Your are now in " + this.currentRoom);
+            if (printLocation) {
+                this.printLocation();
+            }
         } else {
             System.out.println("you cannot go that way");
         }
     }
 
+    //Prints the player's current location
     public void printLocation() {
         System.out.println("You are now in " + this.currentRoom);
     }

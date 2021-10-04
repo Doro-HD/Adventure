@@ -33,7 +33,7 @@ public class Command {
                 playerInput.equals("north") ||
                 playerInput.equals("n")) {
 
-            this.creator.setCurrentRoom(currentRoom.getNorthExit()); //This referring to the player class, and checks if the northExit!=null, if it is
+            this.creator.setCurrentRoom(currentRoom.getNorthExit(), true); //This referring to the player class, and checks if the northExit!=null, if it is
             //it changes the currentRoom value to that.
 
         } else if (playerInput.equals("go south") ||
@@ -41,21 +41,20 @@ public class Command {
                 playerInput.equals("s")) {
             System.out.println("going south");
 
-            this.creator.setCurrentRoom(currentRoom.getSouthExit());
+            this.creator.setCurrentRoom(currentRoom.getSouthExit(), true);
 
         } else if (playerInput.equals("go west") ||
                 playerInput.equals("west") ||
                 playerInput.equals("w")) {
             System.out.println("going west");
 
-            this.creator.setCurrentRoom(currentRoom.getWestExit());
+            this.creator.setCurrentRoom(currentRoom.getWestExit(), true);
         } else if (playerInput.equals("go east") ||
                 playerInput.equals("east") ||
                 playerInput.equals("e")) {
             System.out.println("going east");
 
-            this.creator.setCurrentRoom(currentRoom.getEastExit());
-
+            this.creator.setCurrentRoom(currentRoom.getEastExit(), true);
 
         } else if (playerInput.equals("look") || playerInput.equals("l")) {
             System.out.println("you are looking around and you are in: " + currentRoom);
@@ -69,7 +68,6 @@ public class Command {
             System.out.println("congratzzzz");
             System.exit(0);
         }
-        this.creator.printLocation();
     }
 }
 
