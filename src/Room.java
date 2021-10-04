@@ -1,5 +1,5 @@
 public class Room {
-    /*
+
     private String name;
 
     private Room northExit;
@@ -86,5 +86,5 @@ public class Room {
         this.setNorthExit(northExit);
         this.setWestExit(westExit);
         this.setEastExit(eastExit);
-    }*/
+    }
 }
