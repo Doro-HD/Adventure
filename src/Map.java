@@ -15,7 +15,7 @@ public class Map {
         Room room3 = new Room("Cafeteria","White walls. White floor. This room is almost too white and too empty.\nLong tables with chairs are lined up in five rows, but no people to fill the chairs.");
         Room room4 = new Room("Meeting room","All around the walls are whiteboards and bulletin boards. In the corner furthest away from the door is a desk. \nAnd in the middle of the room is a large, round table with black leather chairs to surround it.");
         Room room5 = new Room("Core Reactor","This room is the smallest on the space station. In the middle is the core reactor!");
-        Room room6 = new Room("Fitness room","A bunch of treadmills and stationary bikes is lined up in front of the room.\nBy the wall, is a shelve with different shapes and sizes of dumbbells. There is also some benches and mats.");
+        Room room6 = new Room("Fitness room","A bunch of treadmills and stationary bikes is lined up in front of the east wall.\nBy the wall, is a shelve with different shapes and sizes of dumbbells. There is also some benches and mats.");
         Room room7 = new Room("Observation deck","This room is big and empty. The walls are like one big window, where you can look out at space and the millions of stars surrounding you.");
         Room room8 = new Room("Escape pod bay","Surrounding the room is 8 pod rooms. The 7 empty pod rooms signals that people have already tried to escape the space station.\nWait, what is that? By the only pod left is.. A body?! A dead body!\nSomeone from your crew has died trying to escape.");
         Room room9 = new Room("Sleeping quarters","Nothing much is in this room besides a bunch of empty bunk beds.\nOn the ground is a couple of bags, probably filled with clothes.");

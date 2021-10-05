@@ -24,7 +24,7 @@ public class Player {
                 this.printLocation();
             }
         } else {
-            System.out.println("you cannot go that way");
+            System.out.println("You cannot go that way!");
         }
     }
 
