@@ -14,7 +14,7 @@ public class Adventure {
         //Creates the player instance with a name and their starting position
         Player player = new Player(userName, map.getStartRoom());
         System.out.println("Well hello "+userName +"! Lets get this game started!");
-        System.out.println("A mechanic noise is filling your ears and it feels like the ground beneath is moving.. Oh! That's right. You are on Mo's Space Station!\nWhy don't you have a look around?");
+        System.out.println("A mechanical noise is filling your ears and it feels like the ground beneath is moving.. Oh! That's right. You are on Mo's Space Station!\nWhy don't you have a look around?");
 
         String userInput = "";
         while (!userInput.equals("exit")) {
