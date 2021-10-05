@@ -9,8 +9,8 @@ public class Command {
     public static void infoHelp(){
         System.out.println("Type 'go north', 'north' or simply 'n' to go upwards.");
         System.out.println("Type 'go south', 'south' or simply 's' to go downwards.");
-        System.out.println("Type 'go east', 'east' or simply 'e' to go right");
-        System.out.println("Type 'go west', 'west' or simply 'w' to go left");
+        System.out.println("Type 'go east', 'east' or simply 'e' to go right.");
+        System.out.println("Type 'go west', 'west' or simply 'w' to go left.");
         System.out.println("Not sure which room you are in? Just type 'look' or 'l' and have a look around!");
     } //This method prints out the different movements you can make.
 
