@@ -22,7 +22,8 @@ public class Room {
     }
 
     public String toString() {
-        return this.name;
+        return "You are in "+ this.name + "\n " +
+            this.description;
     }
 
     public void setDescription(String description){
