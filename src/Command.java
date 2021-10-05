@@ -53,7 +53,7 @@ public class Command {
             case "info", "i", "help", "h" ->  //if info or help is typed
                 infoHelp(); //this method gets printed out
             case "quit", "q" -> {  //if quit is typed the game stops
-                System.out.println("You have quitted the game");
+                System.out.println("You have quitted the game.");
                 System.exit(0);
             }
         }
