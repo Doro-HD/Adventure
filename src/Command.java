@@ -32,6 +32,7 @@ public class Command {
         if (playerInput.equals("go north") || //if input
                 playerInput.equals("north") ||
                 playerInput.equals("n")) {
+            System.out.println("going north");
 
             this.creator.setCurrentRoom(currentRoom.getNorthExit(), true); //This referring to the player class, and checks if the northExit!=null, if it is
             //it changes the currentRoom value to that.
