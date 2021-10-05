@@ -11,7 +11,7 @@ public class Map {
     //Creates 9 rooms and connects them to one another
     public void setup3x3Map() {
         Room room1 = new Room("Hangar bay","This room is huge. It is basically a big platform.\n There is nothing in here, except for the bright light in the ceiling.");
-        Room room2 = new Room("Control Room","Straight out of a science fiction movie! This room is filled with computers - all with multiple screens..\nThe screens are flashing red, some displaying multiple error messages. \nThe screen at the captains chair is displaying message that takes up the entire screen, in bright white letters \nMALFUNCTION IN CORE REACTOR!");
+        Room room2 = new Room("Control Room","Straight out of a science fiction movie! This room is filled with computers - all with multiple screens..\nThe screens are flashing red, some displaying multiple error messages. \nThe screen at the captains chair is displaying a message that takes up the entire screen, in bright white letters \nMALFUNCTION IN CORE REACTOR!");
         Room room3 = new Room("Cafeteria","White walls. White floor. This room is almost too white and too empty.\n Long tables with chairs are lined up in five rows, but no people to fill the chairs.");
         Room room4 = new Room("Meeting room","All around the walls are whiteboards and bulletin boards. In the corner furthest away from the door is a desk. \nAnd in the middle of the room is a large, round table with black leather chairs to surround it.");
         Room room5 = new Room("Core Reactor","This is test5");
