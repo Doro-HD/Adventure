@@ -31,25 +31,25 @@ public class Command {
 
         switch (playerInput) {
             case "go north", "north", "n" -> {
-                System.out.println("going north");
+                System.out.println("Going north");
                 this.creator.setCurrentRoom(currentRoom.getNorthExit(), true); //This referring to the player class, and checks if the northExit!=null, if it is
             }
             //it changes the currentRoom value to that.
 
             case "go south", "south", "s" -> {
-                System.out.println("going south");
+                System.out.println("Going south");
                 this.creator.setCurrentRoom(currentRoom.getSouthExit(), true);
             }
             case "go west", "west", "w" -> {
-                System.out.println("going west");
+                System.out.println("Going west");
                 this.creator.setCurrentRoom(currentRoom.getWestExit(), true);
             }
             case "go east", "east", "e" -> {
-                System.out.println("going east");
+                System.out.println("Going east");
                 this.creator.setCurrentRoom(currentRoom.getEastExit(), true);
             }
             case "look", "l" ->  //if player enters info
-                System.out.println("you are looking around and you are in: " + currentRoom); //this gets printed out
+                System.out.println("You are looking around and you are in: " + currentRoom); //this gets printed out
             case "info", "i", "help", "h" ->  //if info or help is typed
                 infoHelp(); //this method gets printed out
             case "quit", "q" -> {  //if quit is typed the game stops
@@ -58,8 +58,8 @@ public class Command {
             }
         }
         if (this.creator.getCurrentRoom() == endRoom) { //if the currentRoom = endRoom, then the player has won and the game finishes.
-            System.out.println("you found the room !");
-            System.out.println("congratzzzz");
+            System.out.println("You fixed the core reactor!");
+            System.out.println("Congratulation!");
             System.exit(0);
         }
     }
