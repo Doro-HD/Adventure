@@ -16,7 +16,7 @@ public class Command {
 
     public static void startInfo() {
         System.out.println("Welcome to this adventure game! Before we can start the game, I have a little guide just for you, so you know how to play!");
-    infoHelp();
+        infoHelp();
         System.out.println("Forgot how to walk around? You can write 'info', 'i', 'help' or 'h' to get this guide again!");
         System.out.println("Tired of playing? Just type 'quit' or 'q' and I will close the game for you!\n");
     } //This method calls all the start information for the game, also tells the basis of the story.
