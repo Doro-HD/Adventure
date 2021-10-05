@@ -22,7 +22,7 @@ public class Room {
     }
 
     public String toString() {
-        return " the"+ this.name + "\n " +
+        return "the "+ this.name + "\n " +
             this.description;
     }
 
