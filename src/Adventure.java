@@ -14,6 +14,7 @@ public class Adventure {
         //Creates the player instance with a name and their starting position
         Player player = new Player(userName, map.getStartRoom());
 
+        //Initialises an empty string to store the user's commands in
         String userInput = "";
         while (!userInput.equals("exit")) {
             //Gets the user's command and makes it lowercase

@@ -1,22 +1,21 @@
 public class Command {
 
-    private Player creator; //Making an attribute  called creater from the player class
+    private Player creator; //Making an attribute  called creator from the player class
 
     public Command(Player creator) {
         this.creator = creator;
     } //This constructor calls on the attribute from the player class as an attribute.
 
     public static void infoHelp(){
-        System.out.println("Type 'go north', 'north' or simply 'n' to go upwards.");
-        System.out.println("Type 'go south', 'south' or simply 's' to go downwards.");
-        System.out.println("Type 'go east', 'east' or simply 'e' to go right");
-        System.out.println("Type 'go west', 'west' or simply 'w' to go left");
+        System.out.println("Type 'go' and the cardinal direction you wish to move to, 'north', 'south', 'west' or 'east'");
+        System.out.println("You can also simply type the cardinal direction or the first letter of the cardinal direction omitting 'go'");
         System.out.println("Not sure which room you are in? Just type 'look' or 'l' and have a look around!");
+        System.out.println();
     } //This method prints out the different movements you can make.
 
     public static void startInfo() {
         System.out.println("Welcome to this adventure game! Before we can start the game, I have a little guide just for you, so you know how to play!");
-    infoHelp();
+        infoHelp();
         System.out.println("Forgot how to walk around? You can write 'info', 'i', 'help' or 'h' to get this guide again!");
         System.out.println("Tired of playing? Just type 'quit' or 'q' and I will close the game for you!\n");
     } //This method calls all the start information for the game, also tells the basis of the story.
