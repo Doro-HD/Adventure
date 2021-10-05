@@ -10,15 +10,15 @@ public class Map {
     //Method for setting up a 3x3 grid map
     //Creates 9 rooms and connects them to one another
     public void setup3x3Map() {
-        Room room1 = new Room("Hangar bay", "This room is huge. It is basically a big platform. There is nothing in here, except for the bright light in the ceiling.");
-        Room room2 = new Room("Control Room","Straight out of a science fiction movie! This room is filled with computers - all with multiple screens.. The screens are flashing red, some displaying multiple error messages. The screen at the captains chair is displaying message that takes up the entire screen, in bright white letters MALFUNCTION IN CORE REACTOR!");
-        Room room3 = new Room("Cafeteria","White walls. White floor. This room is almost too white and too empty. Long tables with chairs are lined up in five rows, but no people to fill the chairs.");
-        Room room4 = new Room("Meeting room",  "All around the walls are whiteboards and bulletin boards. In the corner furthest away from the door is a desk. And in the middle of the room is a large, round table with black leather chairs to surround it.");
+        Room room1 = new Room("Hangar bay", "This room is huge. It is basically a big platform.\n There is nothing in here, except for the bright light in the ceiling.");
+        Room room2 = new Room("Control Room","Straight out of a science fiction movie! This room is filled with computers - all with multiple screens..\nThe screens are flashing red, some displaying multiple error messages. \nThe screen at the captains chair is displaying message that takes up the entire screen, in bright white letters \nMALFUNCTION IN CORE REACTOR!");
+        Room room3 = new Room("Cafeteria","White walls. White floor. This room is almost too white and too empty.\n Long tables with chairs are lined up in five rows, but no people to fill the chairs.");
+        Room room4 = new Room("Meeting room",  "All around the walls are whiteboards and bulletin boards. In the corner furthest away from the door is a desk. \nAnd in the middle of the room is a large, round table with black leather chairs to surround it.");
         Room room5 = new Room("Core Reactor", "This is test5");
-        Room room6 = new Room("Fitness room", "A bunch of treadmills and stationary bikes is lined up in front of the room. By the wall, is a shelve with different shapes and sizes of dumbbells. There is also some benches and mats.");
+        Room room6 = new Room("Fitness room", "A bunch of treadmills and stationary bikes is lined up in front of the room.\n By the wall, is a shelve with different shapes and sizes of dumbbells. There is also some benches and mats.");
         Room room7 = new Room("Observation deck", "This room is big and empty. The walls are like one big window, where you can look out at space and the millions of stars surrounding you.");
-        Room room8 = new Room("Escape pod bay", "Surrounding the room is 8 pod rooms. The 7 empty pod rooms signals that people have already tried to escape the space station. Wait, what is that? By the only pod left is.. A body?! A dead body! Someone from your crew has died trying to escape.");
-        Room room9 = new Room("Sleeping quarters", "Nothing much is in this room besides a bunch of empty bunk beds. On the ground is a couple of bags, probably filled with clothes.");
+        Room room8 = new Room("Escape pod bay", "Surrounding the room is 8 pod rooms. The 7 empty pod rooms signals that people have already tried to escape the space station.\n Wait, what is that? By the only pod left is.. A body?! A dead body!\n Someone from your crew has died trying to escape.");
+        Room room9 = new Room("Sleeping quarters", "Nothing much is in this room besides a bunch of empty bunk beds.\nOn the ground is a couple of bags, probably filled with clothes.");
 
         this.setStartRoom(room1);
         this.setEndRoom(room5);
