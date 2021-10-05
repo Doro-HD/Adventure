@@ -49,7 +49,7 @@ public class Command {
                 this.creator.setCurrentRoom(currentRoom.getEastExit(), true);
             }
             case "look", "l" ->  //if player enters info
-                System.out.println("You are looking around and you are in: " + currentRoom); //this gets printed out
+                System.out.println("You are looking around and you are in " + currentRoom); //this gets printed out
             case "info", "i", "help", "h" ->  //if info or help is typed
                 infoHelp(); //this method gets printed out
             case "quit", "q" -> {  //if quit is typed the game stops
