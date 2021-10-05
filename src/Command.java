@@ -1,6 +1,6 @@
 public class Command {
 
-    private Player creator; //Making an attribute  called creater from the player class
+    private final Player creator; //Making an attribute  called creater from the player class
 
     public Command(Player creator) {
         this.creator = creator;
@@ -29,43 +29,33 @@ public class Command {
         // currentRoom = starterRoom.
         // endRoom = the room which the player wins if arrived.
 
-        if (playerInput.equals("go north") || //if input
-                playerInput.equals("north") ||
-                playerInput.equals("n")) {
-            System.out.println("going north");
-
-            this.creator.setCurrentRoom(currentRoom.getNorthExit(), true); //This referring to the player class, and checks if the northExit!=null, if it is
+        switch (playerInput) {
+            case "go north", "north", "n" -> {
+                System.out.println("going north");
+                this.creator.setCurrentRoom(currentRoom.getNorthExit(), true); //This referring to the player class, and checks if the northExit!=null, if it is
+            }
             //it changes the currentRoom value to that.
 
-        } else if (playerInput.equals("go south") || //Same thing happens here
-                playerInput.equals("south") ||
-                playerInput.equals("s")) {
-            System.out.println("going south");
-
-            this.creator.setCurrentRoom(currentRoom.getSouthExit(), true);
-
-        } else if (playerInput.equals("go west") ||
-                playerInput.equals("west") ||
-                playerInput.equals("w")) {
-            System.out.println("going west");
-
-            this.creator.setCurrentRoom(currentRoom.getWestExit(), true);
-        } else if (playerInput.equals("go east") ||
-                playerInput.equals("east") ||
-                playerInput.equals("e")) {
-            System.out.println("going east");
-
-            this.creator.setCurrentRoom(currentRoom.getEastExit(), true);
-
-        } else if (playerInput.equals("look") || playerInput.equals("l")) { //if player enters info
-            System.out.println("you are looking around and you are in: " + currentRoom); //this gets printed out
-        }
-        else if (playerInput.equals("info") || playerInput.equals("i") || playerInput.equals("help") || playerInput.equals("h")) { //if info or help is typed
-            infoHelp(); //this method gets printed out
-        }
-        else if (playerInput.equals("quit") || playerInput.equals("q")) { //if quit is typed the game stops
-            System.out.println("You have quitted the game");
-            System.exit(0);
+            case "go south", "south", "s" -> {
+                System.out.println("going south");
+                this.creator.setCurrentRoom(currentRoom.getSouthExit(), true);
+            }
+            case "go west", "west", "w" -> {
+                System.out.println("going west");
+                this.creator.setCurrentRoom(currentRoom.getWestExit(), true);
+            }
+            case "go east", "east", "e" -> {
+                System.out.println("going east");
+                this.creator.setCurrentRoom(currentRoom.getEastExit(), true);
+            }
+            case "look", "l" ->  //if player enters info
+                System.out.println("you are looking around and you are in: " + currentRoom); //this gets printed out
+            case "info", "i", "help", "h" ->  //if info or help is typed
+                infoHelp(); //this method gets printed out
+            case "quit", "q" -> {  //if quit is typed the game stops
+                System.out.println("You have quitted the game");
+                System.exit(0);
+            }
         }
         if (this.creator.getCurrentRoom() == endRoom) { //if the currentRoom = endRoom, then the player has won and the game finishes.
             System.out.println("you found the room !");
