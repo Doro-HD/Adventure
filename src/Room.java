@@ -1,7 +1,10 @@
+import java.util.ArrayList;
+
 public class Room {
 
     private String name;
     private String description;
+    private ArrayList<Item> items;
 
     //Each exit is either a reference to another room or is null
     private Room northExit;
@@ -12,8 +15,10 @@ public class Room {
     public Room(String name, String description) {
         this.setName(name);
         this.setDescription(description);
+        this.items = new ArrayList<>();
     }
 
+    //For testing
     public void printExits() {
         System.out.println("North exit is: " + this.northExit);
         System.out.println("South exit is: " + this.southExit);
@@ -24,6 +29,21 @@ public class Room {
     public String toString() {
         return "the "+ this.name + "\n" +
             this.description;
+    }
+
+    public Item givePlayerItem(String itemName) {
+        Item playerItem = null;
+        for (Item item : this.items) {
+            if (itemName.equals(item.getName())) {
+                playerItem = item;
+                this.items.remove(item);
+            }
+        }
+        return playerItem;
+    }
+
+    public void recievePlayerItem(Item item) {
+        this.items.add(item);
     }
 
     public void setDescription(String description){
@@ -107,5 +127,9 @@ public class Room {
         this.setNorthExit(northExit);
         this.setWestExit(westExit);
         this.setEastExit(eastExit);
+    }
+
+    public ArrayList<Item> getItems() {
+        return this.items;
     }
 }
