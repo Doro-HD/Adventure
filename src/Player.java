@@ -12,6 +12,7 @@ public class Player {
     }
 
     //todo: make sure this method supports the way that the item is written by Nana
+    //todo: make that it can send a response to the user interface
     public void takeItem(String itemName) {
         Item newItem = this.currentRoom.givePlayerItem(itemName);
         if (newItem != null) {
@@ -20,6 +21,7 @@ public class Player {
     }
 
     //todo: make sure this method supports the way that the item is written by Nana
+    //todo: make sure that it can send a response to the user interface
     public void dropItem(String itemName) {
         for (Item item : this.inventory) {
             if (itemName.equals(item.getName())) {
