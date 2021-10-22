@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Adventure {
     public static void main(String[] args) {
         Map map = new Map(); //Sets the map in a 3x3 grid.
+        Count counter = new Count();
         Item item1 = new Item("skruetrækker", "skruetrækkeren fra helvede", "meget pæn");
 
         System.out.println(item1);
@@ -12,7 +13,7 @@ public class Adventure {
 
 
 
-/*
+
         Command.startInfo();
 
         Scanner scanner = new Scanner(System.in);
@@ -26,6 +27,7 @@ public class Adventure {
         System.out.println("A mechanical noise is filling your ears and it feels like the ground beneath is moving.. Oh! That's right. You are on Mo's Space Station!\nWhy don't you have a look around?");
 
         String userInput = "";
+        counter.start();
         while (!userInput.equals("exit")) {
             //Gets the user's command and makes it lowercase
             userInput = scanner.nextLine().toLowerCase();
@@ -38,6 +40,5 @@ public class Adventure {
             command.go(userInput, player.getCurrentRoom(), map.getEndRoom());
         }
 
- */
     }
 }

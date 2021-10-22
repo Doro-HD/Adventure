@@ -55,6 +55,7 @@ public class Command {
         }
         if (this.creator.getCurrentRoom() == endRoom) { //if the currentRoom = endRoom, then the player has won and the game finishes.
             System.out.println("You fixed the core reactor!");
+            System.out.println("Time passed: " + Count.secondsPassed+" seconds");
             System.out.println("Congratulations!");
             System.exit(0);
         }
