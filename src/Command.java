@@ -31,22 +31,18 @@ public class Command {
 
         switch (playerInput) {
             case "go north", "north", "n" -> {
-                System.out.println("Going north");
-                this.creator.setCurrentRoom(currentRoom.getNorthExit(), true); //This referring to the player class, and checks if the northExit!=null, if it is
+                this.creator.setCurrentRoom(currentRoom.getNorthExit(), "north", true); //This referring to the player class, and checks if the northExit!=null, if it is
             }
             //it changes the currentRoom value to that.
 
             case "go south", "south", "s" -> {
-                System.out.println("Going south");
-                this.creator.setCurrentRoom(currentRoom.getSouthExit(), true);
+                this.creator.setCurrentRoom(currentRoom.getSouthExit(), "south", true);
             }
             case "go west", "west", "w" -> {
-                System.out.println("Going west");
-                this.creator.setCurrentRoom(currentRoom.getWestExit(), true);
+                this.creator.setCurrentRoom(currentRoom.getWestExit(), "west", true);
             }
             case "go east", "east", "e" -> {
-                System.out.println("Going east");
-                this.creator.setCurrentRoom(currentRoom.getEastExit(), true);
+                this.creator.setCurrentRoom(currentRoom.getEastExit(), "east", true);
             }
             case "look", "l" ->  //if player enters info
                 System.out.println("You are looking around and you are in " + currentRoom); //this gets printed out
