@@ -3,7 +3,16 @@ import java.util.Scanner;
 public class Adventure {
     public static void main(String[] args) {
         Map map = new Map(); //Sets the map in a 3x3 grid.
+        Item item1 = new Item("skruetrækker", "skruetrækkeren fra helvede", "meget pæn");
 
+        System.out.println(item1);
+
+
+
+
+
+
+/*
         Command.startInfo();
 
         Scanner scanner = new Scanner(System.in);
@@ -28,5 +37,7 @@ public class Adventure {
             //Calls the go method in the Command class which evaluates the user's command
             command.go(userInput, player.getCurrentRoom(), map.getEndRoom());
         }
+
+ */
     }
 }
