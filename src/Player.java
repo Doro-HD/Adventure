@@ -13,22 +13,18 @@ public class Player {
 
     //todo: make sure this method supports the way that the item is written by Nana
     public void takeItem(String itemName) {
-        for (int i = 0; i < this.currentRoom.getItems().size(); i++) {
-            if (this.currentRoom.getItems().get(i).getName().equals(itemName)) {
-                this.inventory.add(this.currentRoom.getItems().get(i));
-                this.currentRoom.getItems().remove(i);
-                i++;
-            }
+        Item newItem = this.currentRoom.givePlayerItem(itemName);
+        if (newItem != null) {
+            this.inventory.add(newItem);
         }
     }
 
     //todo: make sure this method supports the way that the item is written by Nana
     public void dropItem(String itemName) {
-        for (int i = 0; i < this.inventory.size(); i++) {
-            if (this.inventory.get(i).getName().equals(itemName)) {
-                this.currentRoom.getItems().add(this.inventory.get(i));
-                this.inventory.remove(i);
-                i++;
+        for (Item item : this.inventory) {
+            if (itemName.equals(item.getName())) {
+                this.currentRoom.recievePlayerItem(item);
+                this.inventory.remove(item);
             }
         }
     }
