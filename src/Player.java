@@ -11,8 +11,7 @@ public class Player {
         this.inventory = new ArrayList<>();
     }
 
-    //todo: make sure this method supports the way that the item is written by Nana
-    //todo: make that it can send a response to the user interface
+    //Returns a boolean to Command that represents if the item was found
     public boolean takeItem(String itemName) {
         Item newItem = this.currentRoom.givePlayerItem(itemName);
         if (newItem != null) {
@@ -22,11 +21,10 @@ public class Player {
         return false;
     }
 
-    //todo: make sure this method supports the way that the item is written by Nana
-    //todo: make sure that it can send a response to the user interface
+    //Returns a boolean to Command that represents if the item was found
     public boolean dropItem(String itemName) {
         for (Item item : this.inventory) {
-            if (itemName.equals(item.getName())) {
+            if (itemName.equals(item.getType())) {
                 this.currentRoom.recievePlayerItem(item);
                 this.inventory.remove(item);
                 return true;

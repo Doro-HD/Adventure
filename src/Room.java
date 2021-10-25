@@ -33,10 +33,10 @@ public class Room {
 
     public Item givePlayerItem(String itemName) {
         Item playerItem = null;
-        for (Item item : this.items) {
-            if (itemName.equals(item.getName())) {
-                playerItem = item;
-                this.items.remove(item);
+        for (int i = this.items.size() - 1; i >= 0; i--) {
+            if (itemName.equals(this.items.get(i).getType())) {
+                playerItem = this.items.get(i);
+                this.items.remove(this.items.get(i));
             }
         }
         return playerItem;

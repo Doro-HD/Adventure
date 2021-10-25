@@ -4,6 +4,16 @@ public class Adventure {
     public static void main(String[] args) {
         Map map = new Map(); //Sets the map in a 3x3 grid.
         Count counter = new Count();
+        Item item1 = new Item("skruetrækker", "skruetrækkeren fra helvede", "meget pæn");
+        Item item2 = new Item("hammer", "skruetrækkeren fra helvede", "meget pæn");
+        Item item3 = new Item("søm", "skruetrækkeren fra helvede", "meget pæn");
+        Item item4 = new Item("metal", "skruetrækkeren fra helvede", "meget pæn");
+
+        map.getStartRoom().getItems().add(item1);
+        map.getStartRoom().getItems().add(item2);
+        map.getStartRoom().getItems().add(item3);
+        map.getStartRoom().getItems().add(item4);
+
 
         Command.startInfo();
 
@@ -20,6 +30,7 @@ public class Adventure {
         String userInput = "";
         counter.start();
         while (!userInput.equals("exit")) {
+            System.out.println("What would you like to do?");
             //Gets the user's command and makes it lowercase
             userInput = scanner.nextLine().toLowerCase();
             //Removes white space from the beginning and end of the user's input
