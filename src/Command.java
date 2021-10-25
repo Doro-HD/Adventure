@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Command {
 
     private final Player creator; //Making an attribute  called creater from the player class
@@ -24,12 +26,14 @@ public class Command {
 
 
     public void go(String playerInput, Room currentRoom, Room endRoom) { //This method is what makes it possible to move around
+       Scanner input = new Scanner(System.in);
         // It has 3 parameters, (playerInput, currentRoom(which room the player starts in), endRoom).
         //playerInput = south, north etc.
         // currentRoom = starterRoom.
         // endRoom = the room which the player wins if arrived.
 
         switch (playerInput) {
+
             case "go north", "north", "n" -> {
                 this.creator.setCurrentRoom(currentRoom.getNorthExit(), "north", true); //This referring to the player class, and checks if the northExit!=null, if it is
             }
@@ -45,7 +49,20 @@ public class Command {
                 this.creator.setCurrentRoom(currentRoom.getEastExit(), "east", true);
             }
             case "inventory","inv"-> {
+                if(creator.getInventory()==null){
+                    System.out.println("You don't have anything like … in your inventory");
+                }else
                 System.out.println(creator.getInventory());
+            }
+            case "take", "t"->{
+                System.out.println("Write the item you want to take");
+                String inventoryTake = input.nextLine();
+                creator.takeItem(inventoryTake);
+            }
+            case "drop","d"->{
+                System.out.println("Write the item you want to drop");
+                String inventoryDrop = input.nextLine();
+                creator.dropItem(inventoryDrop);
             }
 
 
