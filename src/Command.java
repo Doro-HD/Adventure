@@ -61,7 +61,7 @@ public class Command {
                 if(itemFound){
                     System.out.println("You have taken a "+inventoryTake);
                 }else{
-                    System.out.println("There is no such item you can take!!");
+                    System.out.println("There is nothing like … to take around here!!");
                 }
             }
             case "drop","d"->{
@@ -73,9 +73,7 @@ public class Command {
                 }else {
                     System.out.println("There is no such item in your inventory!!");
                 }
-
             }
-
             case "look", "l" ->  //if player enters info
                 System.out.println("You are looking around and you are in " + currentRoom); //this gets printed out
             case "info", "i", "help", "h" ->  //if info or help is typed
