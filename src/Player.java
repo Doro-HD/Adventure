@@ -65,4 +65,8 @@ public class Player {
     public Room getCurrentRoom() {
         return this.currentRoom;
     }
+
+    public ArrayList<Item> getInventory() {
+        return inventory;
+    }
 }

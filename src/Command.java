@@ -44,6 +44,11 @@ public class Command {
             case "go east", "east", "e" -> {
                 this.creator.setCurrentRoom(currentRoom.getEastExit(), "east", true);
             }
+            case "inventory","inv"-> {
+                System.out.println(creator.getInventory());
+            }
+
+
             case "look", "l" ->  //if player enters info
                 System.out.println("You are looking around and you are in " + currentRoom); //this gets printed out
             case "info", "i", "help", "h" ->  //if info or help is typed
