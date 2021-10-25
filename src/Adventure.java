@@ -4,10 +4,18 @@ public class Adventure {
     public static void main(String[] args) {
         Map map = new Map(); //Sets the map in a 3x3 grid.
         Count counter = new Count();
-        Item item1 = new Item("skruetrækker", "skruetrækkeren fra helvede", "meget pæn");
-        Item item2 = new Item("hammer", "skruetrækkeren fra helvede", "meget pæn");
-        Item item3 = new Item("søm", "skruetrækkeren fra helvede", "meget pæn");
-        Item item4 = new Item("metal", "skruetrækkeren fra helvede", "meget pæn");
+
+
+        Item item1 = new Item("screwdriver", "the only screwdriver you will ever need", " ");
+        Item item2 = new Item("hammer", "hammer ", " ");
+        Item item3 = new Item("flashlight", "small grey flashlight", "eventhough it is smaller than your palm, this flashlight can really light up the room");
+        Item item4 = new Item("waterbottle", "a bottle filled with water", "plastic bottle with a washed out logo");
+        Item item5 = new Item("ID card","plastic ID card","small card with a picture of a man and the name JAMES PETERSON written with a lot of numbers beneath");
+        Item item6 = new Item("knife","pocketknife","small, black knife. The blade is a little rusty");
+        Item item7 = new Item("map","map over Mo's Space Station","a black piece of paper, showing how the 9 rooms on the space station is located.");
+        Item item8 = new Item("key","small silver key","");
+        Item item9 = new Item();
+        Item item10 = new Item();
 
         map.getStartRoom().getItems().add(item1);
         map.getStartRoom().getItems().add(item2);
