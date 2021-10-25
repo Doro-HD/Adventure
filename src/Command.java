@@ -49,7 +49,7 @@ public class Command {
                 this.creator.setCurrentRoom(currentRoom.getEastExit(), "east", true);
             }
             case "inventory","inv"-> {
-                if(creator.getInventory()==null){
+                if(creator.inventoryIsEmpty()){
                     System.out.println("You don't have anything like … in your inventory");
                 }else
                 System.out.println(creator.getInventory());
@@ -57,12 +57,23 @@ public class Command {
             case "take", "t"->{
                 System.out.println("Write the item you want to take");
                 String inventoryTake = input.nextLine();
-                creator.takeItem(inventoryTake);
+                boolean itemFound = creator.takeItem(inventoryTake);
+                if(itemFound){
+                    System.out.println("You have taken a "+inventoryTake);
+                }else{
+                    System.out.println("There is no such item you can take!!");
+                }
             }
             case "drop","d"->{
                 System.out.println("Write the item you want to drop");
                 String inventoryDrop = input.nextLine();
-                creator.dropItem(inventoryDrop);
+                boolean itemDrop = creator.dropItem(inventoryDrop);
+                if (itemDrop){
+                    System.out.println("You have dropped "+inventoryDrop);
+                }else {
+                    System.out.println("There is no such item in your inventory!!");
+                }
+
             }
 
             case "look", "l" ->  //if player enters info
