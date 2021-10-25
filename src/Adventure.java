@@ -4,15 +4,6 @@ public class Adventure {
     public static void main(String[] args) {
         Map map = new Map(); //Sets the map in a 3x3 grid.
         Count counter = new Count();
-        Item item1 = new Item("skruetrækker", "skruetrækkeren fra helvede", "meget pæn");
-
-        System.out.println(item1);
-
-
-
-
-
-
 
         Command.startInfo();
 
