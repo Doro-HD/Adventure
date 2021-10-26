@@ -18,17 +18,18 @@ public class Room {
         this.items = new ArrayList<>();
     }
 
-    //For testing
-    public void printExits() {
-        System.out.println("North exit is: " + this.northExit);
-        System.out.println("South exit is: " + this.southExit);
-        System.out.println("West exit is: " + this.westExit);
-        System.out.println("East exit is: " + this.eastExit);
+    public String itemsToString() {
+        String itemsString = "";
+        for (Item item : this.items) {
+            itemsString += item.toString() + "\n";
+        }
+        return itemsString;
     }
 
     public String toString() {
-        return "the "+ this.name + "\n" +
-            this.description;
+        return "the " + this.name + "\n" +
+                this.description + "\n" +
+                this.itemsToString();
     }
 
     public Item givePlayerItem(String itemName) {
@@ -52,11 +53,11 @@ public class Room {
         this.items.add(item);
     }
 
-    public void setDescription(String description){
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    public String getDescription(){
+    public String getDescription() {
         return description;
     }
 

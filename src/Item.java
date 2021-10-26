@@ -38,7 +38,7 @@ public class Item {
     }
 
     public String toString() {
-        return "This is a " + this.type + "\n" + "It goes by the name: " + this.name + "\n" + "and it looks like this: " + this.description;
+        return this.type;
     }
 
 }

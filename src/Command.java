@@ -26,7 +26,7 @@ public class Command {
 
     public void go(String playerInput, Room currentRoom, Room endRoom) { //This method is what makes it possible to move around
         //Creates an array that splits the playerInput on each white space
-        //It does not matter if there is one or mroe white spaces
+        //It does not matter if there is one or more white spaces
         String[] playerInputArray = playerInput.split("\s+");
 
         Scanner input = new Scanner(System.in);
