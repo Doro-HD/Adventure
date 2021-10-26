@@ -23,9 +23,7 @@ public class Adventure {
         while (!userInput.equals("exit")) {
             System.out.println("What would you like to do?");
             //Gets the user's command and makes it lowercase
-            userInput = scanner.nextLine().toLowerCase();
-            //Removes white space from the beginning and end of the user's input
-            userInput = userInput.trim();
+            userInput = scanner.nextLine().toLowerCase().trim();
 
             //Creates a command instance and sets the player instance as it's creator for easy reference
             Delegator delegator = new Delegator();

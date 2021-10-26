@@ -30,7 +30,7 @@ public class Delegator {
             Operation operation = this.operationMap.get(userInputArray.get(operationIndexes.get(i)));
 
             ArrayList<String> sublist;
-            if (operationIndexes.size() < i + 1) {
+            if (operationIndexes.size() <= i + 1) {
                 sublist = new ArrayList<>(userInputArray.subList(i + 1, userInputArray.size()));
             } else {
                 sublist = new ArrayList<>(userInputArray.subList(i + 1, operationIndexes.get(i + 1)));
@@ -38,6 +38,8 @@ public class Delegator {
 
             ArrayList<String> operationArguments = this.findOperationArguments(sublist);
             operation.setOperationArguments(operationArguments);
+
+            operations.add(operation);
         }
 
         return operations;

@@ -1,7 +1,8 @@
 public class Move extends Operation {
 
     public boolean execute(Player player) {
-        return this.move(player);
+        this.move(player);
+        return true;
     }
 
     private boolean move(Player player) {
