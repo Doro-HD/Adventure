@@ -8,7 +8,7 @@ public class Command {
         this.creator = creator;
     } //This constructor calls on the attribute from the player class as an attribute.
 
-    public static void infoHelp(){
+    public static void infoHelp() {
         System.out.println("Type 'go north', 'north' or simply 'n' to go upwards.");
         System.out.println("Type 'go south', 'south' or simply 's' to go downwards.");
         System.out.println("Type 'go east', 'east' or simply 'e' to go right.");
@@ -24,9 +24,12 @@ public class Command {
     } //This method calls all the start information for the game, also tells the basis of the story.
 
 
-
     public void go(String playerInput, Room currentRoom, Room endRoom) { //This method is what makes it possible to move around
-       Scanner input = new Scanner(System.in);
+        //Creates an array that splits the playerInput on each white space
+        //It does not matter if there is one or mroe white spaces
+        String[] playerInputArray = playerInput.split("\s+");
+
+        Scanner input = new Scanner(System.in);
         // It has 3 parameters, (playerInput, currentRoom(which room the player starts in), endRoom).
         //playerInput = south, north etc.
         // currentRoom = starterRoom.
@@ -48,36 +51,37 @@ public class Command {
             case "go east", "east", "e" -> {
                 this.creator.setCurrentRoom(currentRoom.getEastExit(), "east", true);
             }
-            case "inventory","inv"-> {
-                if(creator.inventoryIsEmpty()){
+            case "inventory", "inv" -> {
+                if (creator.inventoryIsEmpty()) {
                     System.out.println("You don't have anything like … in your inventory");
-                }else
-                System.out.println(creator.getInventory());
+                } else
+                    System.out.println(creator.getInventory());
             }
-            case "take", "t"->{
+            case "take", "t" -> {
                 System.out.println("Write the item you want to take");
                 String inventoryTake = input.nextLine();
                 boolean itemFound = creator.takeItem(inventoryTake);
-                if(itemFound){
-                    System.out.println("You have taken a "+inventoryTake);
-                }else{
+                if (itemFound) {
+                    System.out.println("You have taken a " + inventoryTake);
+                } else {
                     System.out.println("There is nothing like … to take around here!!");
                 }
             }
-            case "drop","d"->{
+            case "drop", "d" -> {
                 System.out.println("Write the item you want to drop");
                 String inventoryDrop = input.nextLine();
                 boolean itemDrop = creator.dropItem(inventoryDrop);
-                if (itemDrop){
-                    System.out.println("You have dropped "+inventoryDrop);
-                }else {
+                if (itemDrop) {
+                    System.out.println("You have dropped " + inventoryDrop);
+                } else {
                     System.out.println("There is no such item in your inventory!!");
                 }
             }
+
             case "look", "l" ->  //if player enters info
-                System.out.println("You are looking around and you are in " + currentRoom); //this gets printed out
+                    System.out.println("You are looking around and you are in " + currentRoom); //this gets printed out
             case "info", "i", "help", "h" ->  //if info or help is typed
-                infoHelp(); //this method gets printed out
+                    infoHelp(); //this method gets printed out
             case "quit", "q" -> {  //if quit is typed the game stops
                 System.out.println("You have quitted the game.");
                 System.exit(0);
@@ -85,7 +89,7 @@ public class Command {
         }
         if (this.creator.getCurrentRoom() == endRoom) { //if the currentRoom = endRoom, then the player has won and the game finishes.
             System.out.println("You fixed the core reactor!");
-            System.out.println("Time passed: " + Count.secondsPassed+" seconds");
+            System.out.println("Time passed: " + Count.secondsPassed + " seconds");
             System.out.println("Congratulations!");
             System.exit(0);
         }

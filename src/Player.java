@@ -17,20 +17,32 @@ public class Player {
         if (newItem != null) {
             this.inventory.add(newItem);
             return true;
+        } else {
+            return false;
         }
-        return false;
     }
 
     //Returns a boolean to Command that represents if the item was found
     public boolean dropItem(String itemName) {
-        for (Item item : this.inventory) {
-            if (itemName.equals(item.getType())) {
+        Item item = findItem(itemName);
+
+        if(item != null) {
                 this.currentRoom.recievePlayerItem(item);
                 this.inventory.remove(item);
                 return true;
             }
+        else {
+            return false;
         }
-        return false;
+    }
+
+    private Item findItem(String itemName) {
+        for (Item item : this.inventory) {
+            if (item.isSameType(itemName)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     public void setName(String name) {

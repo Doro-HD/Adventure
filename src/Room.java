@@ -32,17 +32,23 @@ public class Room {
     }
 
     public Item givePlayerItem(String itemName) {
-        Item playerItem = null;
-        for (int i = this.items.size() - 1; i >= 0; i--) {
-            if (itemName.equals(this.items.get(i).getType())) {
-                playerItem = this.items.get(i);
-                this.items.remove(this.items.get(i));
-            }
-        }
-        return playerItem;
+        return this.findItem(itemName);
     }
 
     public void recievePlayerItem(Item item) {
+        this.items.add(item);
+    }
+
+    public Item findItem(String itemName) {
+        for (Item item : this.items) {
+            if (item.isSameType(itemName)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
+    public void addToItems(Item item) {
         this.items.add(item);
     }
 

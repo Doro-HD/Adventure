@@ -9,6 +9,10 @@ public class Item {
         this.setDescription(description);
     }
 
+    public boolean isSameType(String type) {
+        return this.type.equals(type);
+    }
+
     public void setType(String type) {
         this.type = type;
     }
