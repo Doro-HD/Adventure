@@ -7,7 +7,7 @@ public class Player {
 
     public Player(String name, Room startPosition) {
         this.setName(name);
-        this.setCurrentRoom(startPosition, false);
+        this.setCurrentRoom(startPosition);
         this.inventory = new ArrayList<>();
     }
 
@@ -53,13 +53,9 @@ public class Player {
         return this.name;
     }
 
-    public void setCurrentRoom(Room newPlayerPosition, boolean printLocation) {
-        this.setCurrentRoom(newPlayerPosition, "", printLocation);
-    }
-
     //Sets the players current position to be a new room unless that room is null
     //The argument given in the client code is a reference to another room
-    public boolean setCurrentRoom(Room newPlayerPosition, String direction, boolean printLocation) {
+    public boolean setCurrentRoom(Room newPlayerPosition) {
         if (newPlayerPosition != null) {
             this.currentRoom = newPlayerPosition;
             return true;

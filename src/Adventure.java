@@ -28,9 +28,9 @@ public class Adventure {
             userInput = userInput.trim();
 
             //Creates a command instance and sets the player instance as it's creator for easy reference
-            Command command = new Command(player);
+            Delegator delegator = new Delegator();
             //Calls the go method in the Command class which evaluates the user's command
-            command.go(userInput, player.getCurrentRoom(), map.getEndRoom());
+            delegator.delegate(userInput, player);
         }
 
     }

@@ -33,7 +33,10 @@ public class Room {
     }
 
     public Item givePlayerItem(String itemName) {
-        return this.findItem(itemName);
+        Item playerItem = this.findItem(itemName);
+        this.items.remove(playerItem);
+
+        return playerItem;
     }
 
     public void recievePlayerItem(Item item) {

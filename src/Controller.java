@@ -25,31 +25,31 @@ public class Controller {
     System.out.println("Tired of playing? Just type 'quit' or 'q' and I will close the game for you!\n");
   } //This method calls all the start information for the game, also tells the basis of the story.
 
-  public boolean goNorth(Room currentRoom){     //This referring to the player class, and checks if the northExit!=null, if it is
-    if(this.creator.setCurrentRoom(currentRoom.getNorthExit(), "north", true)){
+  public boolean goNorth(){     //This referring to the player class, and checks if the northExit!=null, if it is
+    if(this.creator.setCurrentRoom(creator.getCurrentRoom().getNorthExit())){
       return true;
     }else
       return false;
   } //This referring to the player class, and checks if the northExit!=null, if it is
   //it changes the currentRoom value to that.
 
-  public boolean goSouth(Room currentRoom){
-    if(this.creator.setCurrentRoom(currentRoom.getSouthExit(), "south", true)){
+  public boolean goSouth(){
+    if(this.creator.setCurrentRoom(creator.getCurrentRoom().getSouthExit())){
       return true;
     }else
       return false;
   }
 
-  public boolean goWest(Room currentRoom){
-    if (this.creator.setCurrentRoom(currentRoom.getWestExit(), "west", true)){
+  public boolean goWest(){
+    if (this.creator.setCurrentRoom(creator.getCurrentRoom().getWestExit())){
       return true;
     }else{
       return false;
     }
   }
 
-  public boolean goEast(Room currentRoom){
-    if (this.creator.setCurrentRoom(currentRoom.getEastExit(), "east", true)){
+  public boolean goEast(){
+    if (this.creator.setCurrentRoom(creator.getCurrentRoom().getEastExit())){
       return true;
     }else{
       return false;
@@ -63,26 +63,12 @@ public class Controller {
       System.out.println(creator.getInventory());
   }
 
-  public void takeItem(){
-    System.out.println("Write the item you want to take");
-    String inventoryTake = input.nextLine();
-    boolean itemFound = creator.takeItem(inventoryTake);
-    if (itemFound) {
-      System.out.println("You have taken a " + inventoryTake);
-    } else {
-      System.out.println("There is nothing like … to take around here!!");
-    }
+  public boolean takeItem(String itemType){
+    return creator.takeItem(itemType);
   }
 
-  public void dropItem(){
-    System.out.println("Write the item you want to drop");
-    String inventoryDrop = input.nextLine();
-    boolean itemDrop = creator.dropItem(inventoryDrop);
-    if (itemDrop) {
-      System.out.println("You have dropped " + inventoryDrop);
-    } else {
-      System.out.println("There is no such item in your inventory!!");
-    }
+  public boolean dropItem(String itemType){
+    return creator.dropItem(itemType);
   }
 
   public void lookRoom(Room currentRoom){
