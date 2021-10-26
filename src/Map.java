@@ -10,7 +10,7 @@ public class Map {
     //Method for setting up a 3x3 grid map
     //Creates 9 rooms and connects them to one another
     public void setup3x3Map() {
-        Item item1 = new Item("screwdriver", "red screwdriver", " ");
+        Item item1 = new Item("screwdriver", "red screwdriver", "Its a red big fat screwdrive, i nearly cant hold it with one hand!");
         Item item2 = new Item("hammer", "heavy hammer", "wooden shaft with a heavy iron head");
         Item item3 = new Item("flashlight", "small grey flashlight", "eventhough it is smaller than your palm, this flashlight can really light up the room");
         Item item4 = new Item("waterbottle", "a bottle filled with water", "plastic bottle with a washed out logo");
