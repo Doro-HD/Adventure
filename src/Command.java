@@ -34,7 +34,8 @@ public class Command {
         //playerInput = south, north etc.
         // currentRoom = starterRoom.
         // endRoom = the room which the player wins if arrived.
-
+        boolean checkAnswer = true;
+do {
         switch (playerInput) {
 
             case "go north", "north", "n" -> {
@@ -86,7 +87,15 @@ public class Command {
                 System.out.println("You have quitted the game.");
                 System.exit(0);
             }
+            default -> {
+                System.out.println("You have entered an invalid answer!!");
+                System.out.println("Try again!");
+                playerInput = input.nextLine();
+            checkAnswer=false;
+            }
         }
+        } while (!checkAnswer);
+
         if (this.creator.getCurrentRoom() == endRoom) { //if the currentRoom = endRoom, then the player has won and the game finishes.
             System.out.println("You fixed the core reactor!");
             System.out.println("Time passed: " + Count.secondsPassed + " seconds");

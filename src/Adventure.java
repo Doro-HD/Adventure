@@ -5,6 +5,7 @@ public class Adventure {
         Map map = new Map(); //Sets the map in a 3x3 grid.
         Count counter = new Count();
 
+
         Command.startInfo();
 
         Scanner scanner = new Scanner(System.in);
