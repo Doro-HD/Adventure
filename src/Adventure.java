@@ -6,7 +6,7 @@ public class Adventure {
         Count counter = new Count();
 
 
-        Item item1 = new Item("screwdriver", "the only screwdriver you will ever need", " ");
+        Item item1 = new Item("screwdriver", "red screwdriver", " ");
         Item item2 = new Item("hammer", "heavy hammer", "wooden shaft with a heavy iron head");
         Item item3 = new Item("flashlight", "small grey flashlight", "eventhough it is smaller than your palm, this flashlight can really light up the room");
         Item item4 = new Item("waterbottle", "a bottle filled with water", "plastic bottle with a washed out logo");
