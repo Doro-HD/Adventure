@@ -6,7 +6,7 @@ public class Adventure {
         Count counter = new Count();
 
 
-        Command.startInfo();
+        Controller.startInfo();
 
         Scanner scanner = new Scanner(System.in);
 

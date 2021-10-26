@@ -59,16 +59,12 @@ public class Player {
 
     //Sets the players current position to be a new room unless that room is null
     //The argument given in the client code is a reference to another room
-    public void setCurrentRoom(Room newPlayerPosition, String direction, boolean printLocation) {
+    public boolean setCurrentRoom(Room newPlayerPosition, String direction, boolean printLocation) {
         if (newPlayerPosition != null) {
-            System.out.println("Going " + direction);
             this.currentRoom = newPlayerPosition;
-            if (printLocation) {
-                this.printLocation();
-            }
-        } else {
-            System.out.println("You cannot go that way!");
-        }
+            return true;
+        }else
+            return false;
     }
 
     //Prints the player's current location

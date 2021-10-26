@@ -2,7 +2,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Count {
-  static int secondsPassed = 0;
+  int secondsPassed = 0;
   Timer myTimer = new Timer();
   TimerTask task = new TimerTask() {
 
