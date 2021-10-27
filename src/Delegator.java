@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Scanner;
 
 public class Delegator {
     private HashMap<String, Operation> operationMap;
@@ -10,6 +9,7 @@ public class Delegator {
         this.operationMap = new HashMap<>();
         this.operationMap.put("go", new Move());
         this.operationMap.put("look", new Look());
+        this.operationMap.put("inventory", new Inventory());
         this.operationMap.put("take", new Take());
         this.operationMap.put("drop", new Drop());
     }
