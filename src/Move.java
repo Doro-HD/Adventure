@@ -35,4 +35,5 @@ public class Move extends Operation {
         this.operationExecution += "\nYou are in:\n" + player.getCurrentRoom();
         return playerWasMoved;
     }
+
 }

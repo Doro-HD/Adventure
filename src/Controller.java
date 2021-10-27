@@ -75,7 +75,7 @@ public class Controller {
     System.out.println("You are looking around and you are in " + currentRoom);
   }
 
-  public void endOfStory(Room currentRoom, Room endRoom){
+  public void endOfStory(Room endRoom){
     if (this.creator.getCurrentRoom() == endRoom) { //if the currentRoom = endRoom, then the player has won and the game finishes.
       System.out.println("You fixed the core reactor!");
       System.out.println("Time passed: " + count.secondsPassed + " seconds");
