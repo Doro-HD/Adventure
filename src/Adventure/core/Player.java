@@ -95,7 +95,7 @@ public class Player {
     public boolean consumeFood(String name){
         Food item = (Food) findItem(name);
         if(item!=null && item instanceof Food){
-            this.setHp(item.getHealingHp());
+            this.setHp(hp + item.getHealingHp());
             return true;
         }else
             return false;
