@@ -103,11 +103,19 @@ public class Delegator {
         return operationArguments;
     }
 
+    //Executes each operation in the arraylist passed to this method
     private void executeOperations(ArrayList<Operation> operations, Player player) {
+        //Loops through each operation in the arraylist passed to this method and executes it
         for (Operation operation: operations) {
+            //Executes the operation and gives the player as an argument to the execute method
             operation.execute(player);
+            //prints out the operation, Operation has a toString() that returns an attribute that is modified -
+            //class that inherits from Operation
             System.out.println(operation);
 
+            //resets all attribute of the operation
+            //the operationArgument arraylist is set to a new empty arraylist
+            //the string that is returned from the toString() method of Operation is set to an empty string
             operation.resetAttributes();
         }
     }
