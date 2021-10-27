@@ -5,6 +5,7 @@ import Adventure.core.Player;
 public class HpStatus extends Operation{
 
   public boolean execute(Player player) {
+    evaluateHp(player);
     return true;
   }
 
