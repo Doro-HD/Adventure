@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Delegator { //Delegator the only thing it does it redirects the operations and excute them
+public class Delegator {
+    //Delegator the only thing it does it redirects the operations and excute them
     // the private methods are there beacuse they shouldnt be run, if its not called by the delegator.
     private HashMap<String, Operation> operationMap;
 
