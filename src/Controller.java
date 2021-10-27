@@ -56,11 +56,11 @@ public class Controller {
     }
   }
 
-  public void showInventory(){
+  public boolean showInventory(){
     if (creator.inventoryIsEmpty()) {
-      System.out.println("You don't have anything like … in your inventory");
+      return false;
     } else
-      System.out.println(creator.getInventory());
+      return true;
   }
 
   public boolean takeItem(String itemType){
