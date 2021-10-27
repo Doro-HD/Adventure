@@ -14,6 +14,7 @@ public class Delegator {
         this.operationMap.put("drop", new Drop());
     }
 
+    //Main method of this class, uses other private methods to delegate task into operations
     public void delegate(String userInput, Player player) {
         ArrayList<String> userInputArray = new ArrayList<>(List.of(userInput.split("\s+")));
 
@@ -22,6 +23,8 @@ public class Delegator {
         this.executeOperations(operations, player);
     }
 
+    //returns an arraylist of operation that it finds in the user's input
+    //uses other private methods to help set up operations
     private ArrayList<Operation> findOperations(ArrayList<String> userInputArray) {
         ArrayList<Integer> operationIndexes = this.findOperationsIndexes(userInputArray);
 
@@ -45,6 +48,7 @@ public class Delegator {
         return operations;
     }
 
+    //finds the index of any operation keyword and returns them as an arraylist
     private ArrayList<Integer> findOperationsIndexes(ArrayList<String> userInputArray) {
         ArrayList<Integer> operationIndexes = new ArrayList<>();
 
@@ -57,6 +61,10 @@ public class Delegator {
         return operationIndexes;
     }
 
+    //returns an arraylist of arguments that the user provided after the operation keyword
+    //the argument provided in findOperations() is a sublist of the user's input
+    //so the method only loops through any argument from the first word after the operation keyword -
+    //up til but not including the next operation keyword
     private ArrayList<String> findOperationArguments(ArrayList<String> userInputArray) {
         ArrayList<String> operationArguments = new ArrayList<>();
 
