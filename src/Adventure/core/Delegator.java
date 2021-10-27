@@ -27,7 +27,7 @@ public class Delegator {
 
     //Main method of this class, uses other private methods to delegate task into Adventure.operations
     public void delegate(String userInput, Player player) {
-        ArrayList<String> userInputArray = new ArrayList<>(List.of(userInput.split("\s+"))); //"split its a way to call a specific"
+        ArrayList<String> userInputArray = new ArrayList<>(List.of(userInput.split("\s+"))); //"split it's a way to call a specific"
         //"\s+ - in this context mean 1 space or more"
 
         //this is the arraylist that contains the Adventure.operations that will be executed once they have been found
