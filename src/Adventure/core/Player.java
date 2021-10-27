@@ -8,11 +8,15 @@ public class Player {
     private String name;
     private ArrayList<Item> inventory;
     private Room currentRoom;
+    private int hp;
+    private int startHp;
 
     public Player(String name, Room startPosition) {
         this.setName(name);
         this.setCurrentRoom(startPosition);
         this.inventory = new ArrayList<>();
+        this.startHp = 200;
+        this.hp = startHp;
     }
 
     //Returns a boolean to Command that represents if the item was found
@@ -85,5 +89,14 @@ public class Player {
 
     public ArrayList<Item> getInventory() {
         return inventory;
+    }
+
+
+    public int getStartHp() {
+        return startHp;
+    }
+
+    public int getHp() {
+        return hp;
     }
 }
