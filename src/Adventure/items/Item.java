@@ -1,3 +1,5 @@
+package Adventure.items;
+
 public class Item {
     private String type;
     private String name;

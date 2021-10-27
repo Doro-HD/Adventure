@@ -1,6 +1,12 @@
+package Adventure.operations;
+
+import Adventure.core.Controller;
+import Adventure.core.Player;
+import Adventure.operations.Operation;
+
 public class Take extends Operation {
 
-    //todo: reconsider if operations need to return a boolean
+    //todo: reconsider if Adventure.operations need to return a boolean
     public boolean execute(Player player) {
         take(player);
         return true;

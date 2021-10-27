@@ -1,3 +1,5 @@
+package Adventure.util;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -12,5 +14,9 @@ public class Count {
   };
   public void start() {
     myTimer.scheduleAtFixedRate(task, 1000, 1000);
+  }
+
+  public int getSecondsPassed() {
+    return this.secondsPassed;
   }
 }

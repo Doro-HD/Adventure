@@ -1,4 +1,9 @@
+package Adventure.core;
+
+import Adventure.util.Count;
+
 import java.util.Scanner;
+
 
 public class Adventure {
     public static void main(String[] args) {

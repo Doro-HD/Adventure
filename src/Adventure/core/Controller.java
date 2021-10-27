@@ -1,4 +1,7 @@
+package Adventure.core;
+
 import java.util.Scanner;
+import Adventure.util.Count;
 
 public class Controller {
   Scanner input = new Scanner(System.in);
@@ -73,8 +76,8 @@ public class Controller {
 
   public void endOfStory(Room endRoom){
     if (this.creator.getCurrentRoom() == endRoom) { //if the currentRoom = endRoom, then the player has won and the game finishes.
-      System.out.println("You fixed the core reactor!");
-      System.out.println("Time passed: " + count.secondsPassed + " seconds");
+      System.out.println("You fixed the Adventure.operations.core reactor!");
+      System.out.println("Time passed: " + count.getSecondsPassed() + " seconds");
       System.out.println("Congratulations!");
       System.exit(0);
     }

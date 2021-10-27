@@ -1,3 +1,8 @@
+package Adventure.operations;
+
+import Adventure.core.Player;
+import Adventure.core.Controller;
+
 public class Drop extends Operation {
 
     public boolean execute(Player player) {
