@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Delegator {
+public class Delegator { //Delegator the only thing it does it redirects the operations and excute them
+    // the private methods are there beacuse they shouldnt be run, if its not called by the delegator.
     private HashMap<String, Operation> operationMap;
 
     public Delegator() {
@@ -16,7 +17,8 @@ public class Delegator {
 
     //Main method of this class, uses other private methods to delegate task into operations
     public void delegate(String userInput, Player player) {
-        ArrayList<String> userInputArray = new ArrayList<>(List.of(userInput.split("\s+")));
+        ArrayList<String> userInputArray = new ArrayList<>(List.of(userInput.split("\s+"))); //"split its a way to call a specific"
+        //"\s+ - in this context mean 1 space or more"
 
         ArrayList<Operation> operations = findOperations(userInputArray);
 
@@ -25,7 +27,8 @@ public class Delegator {
 
     //returns an arraylist of operation that it finds in the user's input
     //uses other private methods to help set up operations
-    private ArrayList<Operation> findOperations(ArrayList<String> userInputArray) {
+    private ArrayList<Operation> findOperations(ArrayList<String> userInputArray) { //This returns a arrayslist of operations
+        //which means
         ArrayList<Integer> operationIndexes = this.findOperationsIndexes(userInputArray);
 
         ArrayList<Operation> operations = new ArrayList<>();

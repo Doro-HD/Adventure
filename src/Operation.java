@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 
-public abstract class Operation {
+public abstract class Operation { //This is a abstract class which means, you can not make an object out of it
+    //Beacuse you are only meant to use the commands that are extended to this class
+
     protected ArrayList<String> operationArguments;
     protected String operationExecution = "";
 
@@ -17,5 +19,6 @@ public abstract class Operation {
 
     public String toString() {
         return this.operationExecution;
-    }
+    } //this returns a string which is being modified, beacuse the different methods change
+    // the toString return value.
 }
