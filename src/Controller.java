@@ -71,10 +71,6 @@ public class Controller {
     return creator.dropItem(itemType);
   }
 
-  public void lookRoom(Room currentRoom){
-    System.out.println("You are looking around and you are in " + currentRoom);
-  }
-
   public void endOfStory(Room endRoom){
     if (this.creator.getCurrentRoom() == endRoom) { //if the currentRoom = endRoom, then the player has won and the game finishes.
       System.out.println("You fixed the core reactor!");
