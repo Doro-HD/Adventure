@@ -22,8 +22,7 @@ public class HpStatus extends Operation{
     }else{
       this.operationExecution += "you are about to die my guy";
     }
-
-
   }
+
 
 }

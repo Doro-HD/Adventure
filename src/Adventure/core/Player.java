@@ -1,5 +1,6 @@
 package Adventure.core;
 
+import Adventure.items.Food;
 import Adventure.items.Item;
 
 import java.util.ArrayList;
@@ -91,6 +92,22 @@ public class Player {
         return inventory;
     }
 
+    public boolean consumeFood(String name){
+        Food item = (Food) findItem(name);
+        if(item!=null && item instanceof Food){
+            this.setHp(item.getHealingHp());
+            return true;
+        }else
+            return false;
+    }
+
+    public void setHp(int hp) {
+        this.hp = Math.min(hp,startHp);
+    }
+
+    public void setStartHp(int startHp) {
+        this.startHp = startHp;
+    }
 
     public int getStartHp() {
         return startHp;
