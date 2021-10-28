@@ -53,6 +53,11 @@ public class Map {
         room2.addToItems(item8);
         room8.addToItems(item9);
 
+        room1.addToItems(meleeWeapon1);
+        room7.addToItems(rangedWeapon1);
+        room2.addToItems(meleeWeapon2);
+        room9.addToItems(rangedWeapon2);
+
         this.setStartRoom(room1);
         this.setEndRoom(room5);
 

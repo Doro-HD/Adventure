@@ -110,6 +110,11 @@ public class Player {
         }
     }
 
+    public void equipWeapon(){
+
+    }
+
+
     public Room getCurrentRoom() {
         return this.currentRoom;
     }
