@@ -1,5 +1,6 @@
 package Adventure.core;
 
+import Adventure.items.Food;
 import Adventure.items.Item;
 
 import java.util.ArrayList;
@@ -43,17 +44,36 @@ public class Room {
         return playerItem;
     }
 
+    public Food givePlayerFood(String foodName) {
+        Food food = this.findFood(foodName);
+        if (food != null) {
+            this.items.remove(food);
+            return food;
+        } else {
+            return null;
+        }
+    }
+
     public void recievePlayerItem(Item item) {
         this.items.add(item);
     }
 
-    public Item findItem(String itemName) {
+    private Item findItem(String itemName) {
         for (Item item : this.items) {
             if (item.isSameType(itemName)) {
                 return item;
             }
         }
         return null;
+    }
+
+    private Food findFood(String foodName) {
+        Item item = this.findItem(foodName);
+        if (item instanceof Food) {
+            return (Food) item;
+        } else {
+            return null;
+        }
     }
 
     public void addToItems(Item item) {

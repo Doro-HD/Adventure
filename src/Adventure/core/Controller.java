@@ -59,11 +59,11 @@ public class Controller {
     }
   }
 
-  public boolean showInventory(){
+  public boolean isInventoryEmpty(){
     if (creator.inventoryIsEmpty()) {
-      return false;
-    } else
       return true;
+    } else
+      return false;
   }
 
   public boolean takeItem(String itemType){

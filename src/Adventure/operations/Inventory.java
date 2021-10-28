@@ -13,7 +13,7 @@ public class Inventory extends Operation {
     public void inventory(Player player) {
         Controller controller = new Controller(player);
 
-        boolean inventoryIsEmpty = controller.showInventory();
+        boolean inventoryIsEmpty = controller.isInventoryEmpty();
         if (inventoryIsEmpty) {
             this.operationExecution += "Your inventory is empty";
         } else {

@@ -17,7 +17,7 @@ public class Player {
         this.setCurrentRoom(startPosition);
         this.inventory = new ArrayList<>();
         this.startHp = 200;
-        this.hp = startHp;
+        this.hp = this.startHp;
     }
 
     //Returns a boolean to Command that represents if the item was found
@@ -54,6 +54,15 @@ public class Player {
         return null;
     }
 
+    private Food findFood(String foodName) {
+        Item item = this.findItem(foodName);
+        if (item instanceof Food) {
+            return (Food) item;
+        } else {
+            return null;
+        }
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -72,11 +81,6 @@ public class Player {
             return false;
     }
 
-    //Prints the player's current location
-    public void printLocation() {
-        System.out.println("You are now in " + this.currentRoom);
-    }
-
     public boolean inventoryIsEmpty() {
         if (this.inventory.isEmpty()) {
             return true;
@@ -84,21 +88,32 @@ public class Player {
             return false;
         }
     }
+    public boolean consumeFood(String name){
+        //Finds a food item in the players inventory
+        Food item = findFood(name);
+        if(item != null){
+            this.setHp(this.hp + item.getHealingHp());
+            this.inventory.remove(item);
+            return true;
+        }else {
+            //if no food item by that name is found in the players inventory -
+            //then the program looks for a Food instance by that name in the player's current room
+            Food roomItem = this.currentRoom.givePlayerFood(name);
+            if (roomItem != null) {
+                this.setHp(this.hp + roomItem.getHealingHp());
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
     public Room getCurrentRoom() {
         return this.currentRoom;
     }
 
     public ArrayList<Item> getInventory() {
         return inventory;
-    }
-
-    public boolean consumeFood(String name){
-        Food item = (Food) findItem(name);
-        if(item!=null && item instanceof Food){
-            this.setHp(hp + item.getHealingHp());
-            return true;
-        }else
-            return false;
     }
 
     public void setHp(int hp) {

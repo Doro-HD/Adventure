@@ -1,7 +1,5 @@
 package Adventure.items;
 
-import Adventure.core.Player;
-
 public class Food extends Item {
 private int healingHp;
 
