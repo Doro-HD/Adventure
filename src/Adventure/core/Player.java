@@ -117,9 +117,9 @@ public class Player {
         Item foundWeapon = findItem(weaponType);
         if(foundWeapon instanceof Weapon){
             this.equippedWeapon = (Weapon) foundWeapon;
-            return false;
-        }
             return true;
+        }
+            return false;
     }
 
 
