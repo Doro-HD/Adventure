@@ -10,7 +10,7 @@ public class Drop extends Operation {
         return true;
     }
 
-    public void drop(Player player) {
+    private void drop(Player player) {
         Controller controller = new Controller(player);
 
         for (String argument: this.operationArguments) {

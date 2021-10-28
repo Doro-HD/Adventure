@@ -10,7 +10,7 @@ public class Inventory extends Operation {
         return true;
     }
 
-    public void inventory(Player player) {
+    private void inventory(Player player) {
         Controller controller = new Controller(player);
 
         boolean inventoryIsEmpty = controller.isInventoryEmpty();

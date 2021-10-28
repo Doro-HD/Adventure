@@ -27,7 +27,7 @@ public class Map {
         Item item9 = new Item("note","folded piece of paper","when unfolded, the paper reveals a note that says: 'PASSWORD: 123mss321'");
 
         MeleeWeapon meleeWeapon1 = new MeleeWeapon("Dagger", "The Dagger of galaxies", "A blade of obsidian stone", 15);
-        MeleeWeapon meleeWeapon2 = new MeleeWeapon("Chainsaw", "SAWS!!!", "the Chainsaw has it name 'Saws' written on the side in blood", 30);
+        MeleeWeapon meleeWeapon2 = new MeleeWeapon("chainsaw", "SAWS!!!", "the Chainsaw has it name 'Saws' written on the side in blood", 30);
 
         RangedWeapon rangedWeapon1 = new RangedWeapon("Raygun", "Beam of light", "A small gun with the power of the SUN!", 40, 6);
         RangedWeapon rangedWeapon2 = new RangedWeapon("BFG", "Big F*cking Gun", "A Big F*cking Gun!", 50, 4);

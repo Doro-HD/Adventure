@@ -8,10 +8,11 @@ import java.util.ArrayList;
 
 public class Player {
     private String name;
-    private ArrayList<Item> inventory;
-    private Room currentRoom;
     private int hp;
     private int startHp;
+    private Weapon equippedWeapon;
+    private ArrayList<Item> inventory;
+    private Room currentRoom;
 
     public Player(String name, Room startPosition) {
         this.setName(name);
@@ -115,6 +116,7 @@ public class Player {
     public boolean equipWeapon(String weaponType){
         Item foundWeapon = findItem(weaponType);
         if(foundWeapon instanceof Weapon){
+            this.equippedWeapon = (Weapon) foundWeapon;
             return true;
         }
             return false;

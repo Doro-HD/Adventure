@@ -25,6 +25,7 @@ public class Delegator {
         this.operationMap.put("eat",new Eat());
         this.operationMap.put("take", new Take());
         this.operationMap.put("drop", new Drop());
+        this.operationMap.put("equip", new Equip());
     }
 
     //Main method of this class, uses other private methods to delegate task into Adventure.operations
