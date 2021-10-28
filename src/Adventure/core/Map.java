@@ -21,9 +21,9 @@ public class Map {
 
         Food food1 = new Food("Apple","Apple","apple",10);
         Food food2 = new Food("energybar","energybar","energybar",15);
-        Food food3 = new Food("beef jerky","beef jerky","beef jerky",15);
+        Food food3 = new Food("beefjerky","beefjerky","beef jerky",15);
         Food food4 = new Food("pizzaslice","pizzaslice","pizzaslice",20);
-        Food food5 = new Food("bag of nuts","bag of nuts","bag of nuts",10);
+        Food food5 = new Food("nuts","nuts","bag of nuts",10);
         Food food6 = new Food("banana","banana","banana",15);
         Food food7 = new Food("cookie","cookie","cookie",5);
         Food food8 = new Food("banana","banana","banana",15);
