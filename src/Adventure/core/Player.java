@@ -33,16 +33,18 @@ public class Player {
 
     //Returns a boolean to Command that represents if the item was found
     public boolean dropItem(String itemName) {
+        boolean itemWasDropped;
         Item item = findItem(itemName);
 
         if(item != null) {
                 this.currentRoom.recievePlayerItem(item);
                 this.inventory.remove(item);
-                return true;
+                itemWasDropped = true;
             }
         else {
-            return false;
+            itemWasDropped = false;
         }
+        return itemWasDropped;
     }
 
     private Item findItem(String itemName) {
