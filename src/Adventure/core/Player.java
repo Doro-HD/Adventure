@@ -2,6 +2,7 @@ package Adventure.core;
 
 import Adventure.items.Food;
 import Adventure.items.Item;
+import Adventure.items.Weapon;
 
 import java.util.ArrayList;
 
@@ -19,6 +20,7 @@ public class Player {
         this.startHp = 200;
         this.hp = this.startHp;
     }
+
 
     //Returns a boolean to Command that represents if the item was found
     public boolean takeItem(String itemName) {
@@ -110,8 +112,12 @@ public class Player {
         }
     }
 
-    public void equipWeapon(){
-
+    public boolean equipWeapon(String weaponType){
+        Item foundWeapon = findItem(weaponType);
+        if(foundWeapon instanceof Weapon){
+            return true;
+        }
+            return false;
     }
 
 
