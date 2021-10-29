@@ -22,6 +22,14 @@ public class Player {
         this.hp = this.startHp;
     }
 
+    public String inventoryToString() {
+        String itemsString = "";
+        for (Item item : this.inventory) {
+            itemsString += "\t" + item.toString() + "\n";
+        }
+        return itemsString;
+    }
+
 
     //Returns a boolean to Command that represents if the item was found
     public boolean takeItem(String itemName) {

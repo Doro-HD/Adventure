@@ -17,7 +17,8 @@ public class Inventory extends Operation {
         if (inventoryIsEmpty) {
             this.operationExecution += "Your inventory is empty";
         } else {
-            this.operationExecution += player.getInventory();
+            this.operationExecution += "Your inventory:\n" + player.inventoryToString();
         }
+        this.operationExecution += "\n";
     }
 }
