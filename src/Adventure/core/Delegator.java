@@ -59,12 +59,12 @@ public class Delegator {
             if (operationIndexes.size() <= i + 1) {
                 //if the current iteration is the last iteration -
                 //then the sublist will range from the current operation keyword index + 1, to the end of the user's input
-                sublist = new ArrayList<>(userInputArray.subList(i + 1, userInputArray.size()));
+                sublist = new ArrayList<>(userInputArray.subList(operationIndexes.get(i) + 1, userInputArray.size()));
             } else {
                 //if the current iteration is not the last iteration -
                 //then the sublist will range from the current operation keyword index + 1, -
                 //up to but not including the next operation keyword
-                sublist = new ArrayList<>(userInputArray.subList(i + 1, operationIndexes.get(i + 1)));
+                sublist = new ArrayList<>(userInputArray.subList(operationIndexes.get(i) + 1, operationIndexes.get(i + 1)));
             }
 
             //this arraylist will contain all arguments that are typed after the last operation keyword
