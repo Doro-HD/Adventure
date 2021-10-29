@@ -1,5 +1,6 @@
 package Adventure.core;
 
+import Adventure.items.Food;
 import Adventure.items.Item;
 import Adventure.items.MeleeWeapon;
 import Adventure.items.RangedWeapon;
@@ -16,6 +17,18 @@ public class Map {
     //Method for setting up a 3x3 grid map
     //Creates 9 rooms and connects them to one another
     public void setup3x3Map() {
+
+
+        Food food1 = new Food("Apple","Apple","apple",10);
+        Food food2 = new Food("energybar","energybar","energybar",15);
+        Food food3 = new Food("beefjerky","beefjerky","beef jerky",15);
+        Food food4 = new Food("pizzaslice","pizzaslice","pizzaslice",20);
+        Food food5 = new Food("nuts","nuts","bag of nuts",10);
+        Food food6 = new Food("banana","banana","banana",15);
+        Food food7 = new Food("cookie","cookie","cookie",5);
+        Food food8 = new Food("banana","banana","banana",15);
+        Food food9 = new Food("banana","banana","banana",15);
+
         Item item1 = new Item("screwdriver", "red screwdriver", "Its a red big fat screwdrive, i nearly cant hold it with one hand!");
         Item item2 = new Item("hammer", "heavy hammer", "wooden shaft with a heavy iron head");
         Item item3 = new Item("flashlight", "small grey flashlight", "eventhough it is smaller than your palm, this flashlight can really light up the room");
@@ -43,6 +56,16 @@ public class Map {
         Room room8 = new Room("Escape pod bay","Surrounding the room is 8 pod rooms. The 7 empty pod rooms signals that people have already tried to escape the space station.\nWait, what is that? By the only pod left is.. A body?! A dead body!\nSomeone from your crew has died trying to escape.");
         Room room9 = new Room("Sleeping quarters","Nothing much is in this room besides a bunch of empty bunk beds.\nOn the ground is a couple of bags, probably filled with clothes.");
 
+        room3.addToItems(food1);
+        room6.addToItems(food2);
+        room9.addToItems(food3);
+        room3.addToItems(food4);
+        room4.addToItems(food5);
+        room3.addToItems(food6);
+        room7.addToItems(food7);
+        room3.addToItems(food8);
+        room3.addToItems(food9);
+
         room1.addToItems(item1);
         room5.addToItems(item2);
         room7.addToItems(item3);
@@ -57,6 +80,7 @@ public class Map {
         room7.addToItems(rangedWeapon1);
         room2.addToItems(meleeWeapon2);
         room9.addToItems(rangedWeapon2);
+
 
         this.setStartRoom(room1);
         this.setEndRoom(room5);
