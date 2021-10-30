@@ -55,17 +55,22 @@ public class Delegator {
             //sublist is an arraylist that will contain any arguments that the user provide to an operation
             //for example. If the user typed "go north". go is an operation and north is an argument to go
             ArrayList<String> sublist;
+
+            //variable used to identify the end of the arguments for the current operation keyword
+            int sublistRangeEnd;
             //if the current iteration is the last iteration of the for loop the if statement is true
             if (operationIndexes.size() <= i + 1) {
                 //if the current iteration is the last iteration -
                 //then the sublist will range from the current operation keyword index + 1, to the end of the user's input
-                sublist = new ArrayList<>(userInputArray.subList(operationIndexes.get(i) + 1, userInputArray.size()));
+                sublistRangeEnd = userInputArray.size();
             } else {
                 //if the current iteration is not the last iteration -
                 //then the sublist will range from the current operation keyword index + 1, -
                 //up to but not including the next operation keyword
-                sublist = new ArrayList<>(userInputArray.subList(operationIndexes.get(i) + 1, operationIndexes.get(i + 1)));
+                sublistRangeEnd = operationIndexes.get(i + 1);
             }
+            //create the sublist with a range matching any argument given to the current operation keyword
+            sublist = new ArrayList<>(userInputArray.subList(operationIndexes.get(i) + 1, sublistRangeEnd));
 
             //this arraylist will contain all arguments that are typed after the last operation keyword
             ArrayList<String> operationArguments = this.findOperationArguments(sublist);
