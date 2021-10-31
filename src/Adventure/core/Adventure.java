@@ -21,7 +21,8 @@ public class Adventure {
         Player player = new Player(userName, map.getStartRoom());
         Controller control = new Controller(player);
         System.out.println("Well hello " + userName + "! Lets get this game started!");
-        System.out.println("A mechanical noise is filling your ears and it feels like the ground beneath is moving.. Oh! That's right. You are on Mo's Space Station!\nWhy don't you have a look around?");
+        System.out.println("A mechanical noise is filling your ears and it feels like the ground beneath is moving.. Oh! That's right. " +
+            "You are on Mo's Space Station!\nWhy don't you have a look around?");
 
         String userInput = "";
         counter.start();
