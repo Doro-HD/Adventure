@@ -1,12 +1,13 @@
 package Adventure.operations;
 
 import Adventure.core.Player;
+import Adventure.util.Status;
 
 public class HpStatus extends Operation{
 
-  public boolean execute(Player player) {
+  public Status execute(Player player) {
     evaluateHp(player);
-    return true;
+    return Status.nextOp;
   }
 
   private void evaluateHp(Player player){

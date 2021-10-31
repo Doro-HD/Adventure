@@ -2,12 +2,13 @@ package Adventure.operations;
 
 import Adventure.core.Player;
 import Adventure.core.Controller;
+import Adventure.util.Status;
 
 public class Move extends Operation {
 
-    public boolean execute(Player player) {
+    public Status execute(Player player) {
         this.move(player);
-        return true;
+        return Status.nextOp;
     }
 
     private boolean move(Player player) {

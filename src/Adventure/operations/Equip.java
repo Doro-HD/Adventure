@@ -1,11 +1,12 @@
 package Adventure.operations;
 
 import Adventure.core.Player;
+import Adventure.util.Status;
 
 public class Equip extends Operation {
-  public boolean execute(Player player) {
+  public Status execute(Player player) {
     equip(player);
-    return true;
+    return Status.nextOp;
   }
 
   private void equip(Player player){

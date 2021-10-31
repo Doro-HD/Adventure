@@ -3,13 +3,14 @@ package Adventure.operations;
 import Adventure.core.Controller;
 import Adventure.core.Player;
 import Adventure.operations.Operation;
+import Adventure.util.Status;
 
 public class Take extends Operation {
 
     //todo: reconsider if Adventure.operations need to return a boolean
-    public boolean execute(Player player) {
+    public Status execute(Player player) {
         take(player);
-        return true;
+        return Status.nextOp;
     }
 
     private void take(Player player) {

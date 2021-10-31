@@ -1,11 +1,12 @@
 package Adventure.operations;
 
 import Adventure.core.Player;
+import Adventure.util.Status;
 
 public class Eat extends Operation {
-  public boolean execute(Player player) {
+  public Status execute(Player player) {
     eat(player);
-    return true;
+    return Status.nextOp;
   }
   private void eat(Player player){
     for (String food: this.operationArguments) { //lorte udtryk

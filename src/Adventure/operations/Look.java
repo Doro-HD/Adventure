@@ -2,12 +2,13 @@ package Adventure.operations;
 
 import Adventure.core.Player;
 import Adventure.core.Controller;
+import Adventure.util.Status;
 
 public class Look extends Operation {
 
-    public boolean execute(Player player) {
+    public Status execute(Player player) {
         this.look(player);
-        return true;
+        return Status.nextOp;
     }
 
     private void look(Player player) {

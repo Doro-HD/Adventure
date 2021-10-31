@@ -2,12 +2,13 @@ package Adventure.operations;
 
 import Adventure.core.Player;
 import Adventure.core.Controller;
+import Adventure.util.Status;
 
 public class Inventory extends Operation {
 
-    public boolean execute(Player player) {
+    public Status execute(Player player) {
         this.inventory(player);
-        return true;
+        return Status.nextOp;
     }
 
     private void inventory(Player player) {

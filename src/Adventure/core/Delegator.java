@@ -1,10 +1,12 @@
 package Adventure.core;
 
 import Adventure.operations.*;
+import Adventure.util.Status;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 //Adventure.operations.core.Delegator the only thing it does it redirects the Adventure.operations and excute them
 // the private methods are there beacuse they shouldnt be run, if its not called by the delegator.
@@ -28,6 +30,15 @@ public class Delegator {
         this.operationMap.put("equip", new Equip());
     }
 
+    public ArrayList<String> getUserInput(String prompt) {
+        System.out.print(prompt + "-> ");
+        Scanner scanner = new Scanner(System.in);
+
+        String userInput = scanner.nextLine().toLowerCase().trim();
+
+        return new ArrayList<>(List.of(userInput.split("\s+")));
+    }
+
     //Main method of this class, uses other private methods to delegate task into Adventure.operations
     public void delegate(String userInput, Player player) {
         ArrayList<String> userInputArray = new ArrayList<>(List.of(userInput.split("\s+"))); //"split it's a way to call a specific"
@@ -39,9 +50,14 @@ public class Delegator {
         this.executeOperations(operations, player);
     }
 
+    private ArrayList<Operation> findOperations(ArrayList<String> userInputArray) {
+
+        return this.findOperations(userInputArray, new ArrayList<>(), userInputArray.size());
+    }
+
     //returns an arraylist of operation that it finds in the user's input
     //uses other private methods to help set up Adventure.operations
-    private ArrayList<Operation> findOperations(ArrayList<String> userInputArray) { //This returns a arrayslist of Adventure.operations
+    private ArrayList<Operation> findOperations(ArrayList<String> userInputArray, ArrayList<String> allowedOperations, int allowedNumberOfOperations) { //This returns a arrayslist of Adventure.operations
         //which means
         //this arraylist contains integers which represents the index of any keyword that the user entered
         ArrayList<Integer> operationIndexes = this.findOperationsIndexes(userInputArray);
@@ -108,10 +124,29 @@ public class Delegator {
 
     //Executes each operation in the arraylist passed to this method
     private void executeOperations(ArrayList<Operation> operations, Player player) {
-        //Loops through each operation in the arraylist passed to this method and executes it
-        for (Operation operation: operations) {
+        boolean executeOperations = true;
+        int index = 0;
+
+        while (executeOperations) {
+            Operation operation = operations.get(index);
             //Executes the operation and gives the player as an argument to the execute method
-            operation.execute(player);
+            Status status = operation.execute(player);
+
+            switch (status) {
+                case nextOp:
+                    index++;
+                    break;
+                case newOp:
+                    ArrayList<String> userInputArray = this.getUserInput(operation.toString());
+                    ArrayList<String> aO = new ArrayList<>();
+                    aO.add("go");
+                    aO.add("inventory");
+                    ArrayList<Operation> newOperations = this.findOperations(userInputArray, aO, 1);
+                    break;
+                case exitProgram:
+                    executeOperations = false;
+                    break;
+            }
             //prints out the operation, Operation has a toString() that returns an attribute that is modified -
             //class that inherits from Operation
             System.out.println(operation);
