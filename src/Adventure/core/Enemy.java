@@ -19,7 +19,7 @@ public class Enemy {
 
     @Override
     public String toString() {
-        return name + description;
+        return name + "... " + description;
     }
 
 
