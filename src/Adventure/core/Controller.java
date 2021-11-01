@@ -79,7 +79,7 @@ public class Controller {
       System.out.println("You fixed the Adventure.operations.core reactor!");
       System.out.println("Time passed: " + count.getSecondsPassed() + " seconds");
       System.out.println("Congratulations!");
+      System.exit(0);
     }
-    count.stop();
   }
 }
