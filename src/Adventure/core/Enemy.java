@@ -8,7 +8,6 @@ public class Enemy {
     private Room currentRoom;
     private Weapon equippedWeapon;
 
-
     public Enemy(String name, int hp, Weapon equippedWeapon){
         this.name = name;
         this.hp = hp;
