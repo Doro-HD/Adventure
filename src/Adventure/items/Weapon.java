@@ -7,4 +7,6 @@ public abstract class Weapon extends Item {
     super(type, name, description);
     this.damage = damage;
   }
+
+  public abstract boolean useAble();
 }
