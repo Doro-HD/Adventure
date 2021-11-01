@@ -63,9 +63,9 @@ public class Map {
         Room room9 = new Room("Sleeping quarters","Nothing much is in this room besides a bunch of empty bunk beds.\nOn the ground is a couple of bags, probably filled with clothes.");
 
         Enemy enemy1 = new Enemy("disturbed person","This person looks angry and terrified at the same time.. most importantly they look evil!!",150,room3,enemyWeapon1);
-        Enemy enemy2 = new Enemy("dark, scary figure","it's hard to describe this .. person? being? what is this? whatever creature this is, it is in fact pretty scary to look at!",250,room4,enemyWeapon2);
+        Enemy enemy2 = new Enemy("dark, scary figure","it's hard to describe this .. person? being? what is this? whatever creature this is, it is in fact pretty scary to look at!",180,room4,enemyWeapon2);
         Enemy enemy3 = new Enemy("loud and sweaty man","this man is breathing heavily.. it terrifies you! He is also sweaty and it looks like he could attack any minute!!",200,room6,enemyWeapon3);
-        Enemy enemy4 = new Enemy("man with bloody hands","so much blood on the hands of this man! he must have killed someone!",180,room8,enemyWeapon4);
+        Enemy enemy4 = new Enemy("man with bloody hands","so much blood on the hands of this man! he must have killed someone!",250,room8,enemyWeapon4);
 
 
         room3.setEnemy(enemy1);
