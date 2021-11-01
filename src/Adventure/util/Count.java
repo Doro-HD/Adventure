@@ -17,6 +17,10 @@ public class Count {
     myTimer.scheduleAtFixedRate(task, 1000, 1000);
   }
 
+  public void stop() {
+    myTimer.cancel();
+  }
+
   public int getSecondsPassed() {
     return this.secondsPassed;
   }

@@ -80,5 +80,6 @@ public class Controller {
       System.out.println("Time passed: " + count.getSecondsPassed() + " seconds");
       System.out.println("Congratulations!");
     }
+    count.stop();
   }
 }

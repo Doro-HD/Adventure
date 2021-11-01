@@ -23,7 +23,7 @@ public class Adventure {
 
         System.out.println("Well hello " + userName + "! Lets get this game started!");
         System.out.println("A mechanical noise is filling your ears and it feels like the ground beneath is moving.. Oh! That's right. " +
-            "You are on Mo's Space Station!\nWhy don't you have a look around?");
+                "You are on Mo's Space Station!\nWhy don't you have a look around?");
 
         String userInput = "";
         boolean continueGame = true;
@@ -40,6 +40,8 @@ public class Adventure {
             continueGame = delegator.delegate(userInput, player);
             control.endOfStory(map.getEndRoom());
         }
-        scanner.nextLine();
+
+        //Program cannot exit, so we force it to at the end.
+        System.exit(0);
     }
 }
