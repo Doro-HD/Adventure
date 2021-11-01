@@ -1,6 +1,7 @@
 package Adventure.operations;
 
 import Adventure.core.Player;
+import Adventure.util.Status;
 
 public class Eat extends Operation {
 
@@ -11,11 +12,18 @@ public class Eat extends Operation {
 
   private void eat(Player player){
     for (String food: this.operationArguments) {
-      boolean checkFood = player.consumeFood(food);
-      if(checkFood){
-        operationExecution += "You ate: " + food + "\n";
-      }else{
-        operationExecution += "You cant eat that shit bro \n";
+      Status checkFood = player.consumeFood(food);
+
+      switch (checkFood) {
+        case usable:
+          this.operationExecution += "You have eaten " + food;
+          break;
+        case notUsable:
+          this.operationExecution += food + " is not edible";
+          break;
+        case notFound:
+          this.operationExecution += "There is no " + food + " in your inventory or room";
+          break;
       }
 
     }

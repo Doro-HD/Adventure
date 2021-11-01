@@ -1,5 +1,7 @@
 package Adventure.util;
 
 public enum Status {
-  usable, notUsable, notFound
+  usable,
+  notUsable,
+  notFound
 }
