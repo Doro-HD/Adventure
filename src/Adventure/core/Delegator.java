@@ -27,6 +27,7 @@ public class Delegator {
         this.operationMap.put("drop", new Drop());
         this.operationMap.put("equip", new Equip());
         this.operationMap.put("attack", new Attack());
+        this.operationMap.put("help", new Help());
         this.operationMap.put("exit", new Exit());
     }
 
