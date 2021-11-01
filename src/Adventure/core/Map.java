@@ -42,10 +42,10 @@ public class Map {
 
         MeleeWeapon meleeWeapon1 = new MeleeWeapon("dagger", "The Dagger of galaxies", "A blade of obsidian stone", 15);
         MeleeWeapon meleeWeapon2 = new MeleeWeapon("chainsaw", "SAWS!!!", "the Chainsaw has it name 'Saws' written on the side in blood", 30);
+        MeleeWeapon enemyWeapon1 = new MeleeWeapon("dagger", "The Dagger of galaxies", "A blade of obsidian stone", 15);
 
         RangedWeapon rangedWeapon1 = new RangedWeapon("raygun", "Beam of light", "A small gun with the power of the SUN!", 40, 6);
         RangedWeapon rangedWeapon2 = new RangedWeapon("bfg", "Big F*cking Gun", "A Big F*cking Gun!", 50, 4);
-
 
 
         Room room1 = new Room("Hangar bay","This room is huge. It is basically a big platform.\nThere is nothing in here, except for the bright light in the ceiling.");
@@ -58,7 +58,9 @@ public class Map {
         Room room8 = new Room("Escape pod bay","Surrounding the room is 8 pod rooms. The 7 empty pod rooms signals that people have already tried to escape the space station.\nWait, what is that? By the only pod left is.. A body?! A dead body!\nSomeone from your crew has died trying to escape.");
         Room room9 = new Room("Sleeping quarters","Nothing much is in this room besides a bunch of empty bunk beds.\nOn the ground is a couple of bags, probably filled with clothes.");
 
+        Enemy enemy1 = new Enemy("fjende1",180,room2,enemyWeapon1);
 
+        room2.setEnemy(enemy1);
         room3.addToItems(food1);
         room6.addToItems(food2);
         room9.addToItems(food3);

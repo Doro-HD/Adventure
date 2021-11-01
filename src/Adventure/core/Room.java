@@ -168,6 +168,10 @@ public class Room {
         return this.items;
     }
 
+    public void setEnemy(Enemy enemy) {
+        this.enemy = enemy;
+    }
+
     public Enemy getEnemy(){
         return this.enemy;
     }
