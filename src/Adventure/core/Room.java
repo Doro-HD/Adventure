@@ -35,7 +35,8 @@ public class Room {
     public String toString() {
         return "the " + this.name + "\n" +
                 this.description + "\n" +
-                this.itemsToString() + (this.enemy !=null ? this.enemy: "");    }
+                "You can find the following items in this room:\n" + this.itemsToString() +
+                "Enemies in " + this.name + ": " + (this.enemy !=null ? this.enemy: "");    }
 
     public Item givePlayerItem(String itemName) {
         Item playerItem = this.findItem(itemName);
