@@ -1,5 +1,6 @@
 package Adventure.core;
 
+
 import Adventure.items.Food;
 import Adventure.items.Item;
 import Adventure.items.MeleeWeapon;
@@ -46,6 +47,7 @@ public class Map {
         RangedWeapon rangedWeapon2 = new RangedWeapon("bfg", "Big F*cking Gun", "A Big F*cking Gun!", 50, 4);
 
 
+
         Room room1 = new Room("Hangar bay","This room is huge. It is basically a big platform.\nThere is nothing in here, except for the bright light in the ceiling.");
         Room room2 = new Room("Control Adventure.operations.core.Room","Straight out of a science fiction movie! This room is filled with computers - all with multiple screens..\nThe screens are flashing red, some displaying multiple error messages. \nThe screen at the captains chair is displaying a message that takes up the entire screen, in bright white letters \nMALFUNCTION IN CORE REACTOR!");
         Room room3 = new Room("Cafeteria","White walls. White floor. This room is almost too white and too empty.\nLong tables with chairs are lined up in five rows, but no people to fill the chairs.");
@@ -55,6 +57,7 @@ public class Map {
         Room room7 = new Room("Observation deck","This room is big and empty. The walls are like one big window, where you can look out at space and the millions of stars surrounding you.");
         Room room8 = new Room("Escape pod bay","Surrounding the room is 8 pod rooms. The 7 empty pod rooms signals that people have already tried to escape the space station.\nWait, what is that? By the only pod left is.. A body?! A dead body!\nSomeone from your crew has died trying to escape.");
         Room room9 = new Room("Sleeping quarters","Nothing much is in this room besides a bunch of empty bunk beds.\nOn the ground is a couple of bags, probably filled with clothes.");
+
 
         room3.addToItems(food1);
         room6.addToItems(food2);
