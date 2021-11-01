@@ -10,6 +10,13 @@ public class RangedWeapon extends Weapon {
   }
 
   public boolean isUseAble() {
-    return this.ammunition > 0;
+    boolean isUseAble = this.ammunition > 0;
+
+    if (isUseAble) {
+      this.ammunition -= 1;
+      return true;
+    } else {
+      return false;
+    }
   }
 }

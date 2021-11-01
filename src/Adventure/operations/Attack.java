@@ -28,7 +28,6 @@ public class Attack extends Operation{
         this.operationExecution += "Congratulations you killed the enemy.";
         break;
       case enemyIsStillAlive:
-        this.operationExecution += "The enemy is still alive with .";
         break;
       case playerIsDead:
         this.operationExecution += "You Died!\nGAME OVER";

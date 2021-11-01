@@ -98,6 +98,7 @@ public class Player {
             return Status.notUsable;
         } else {
             this.heal(((Food) item).getHealingHp());
+            this.inventory.remove(item);
             return Status.usable;
         }
     }
