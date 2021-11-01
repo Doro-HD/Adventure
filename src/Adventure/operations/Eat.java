@@ -3,10 +3,12 @@ package Adventure.operations;
 import Adventure.core.Player;
 
 public class Eat extends Operation {
+
   public boolean execute(Player player) {
-    eat(player);
+    this.eat(player);
     return true;
   }
+
   private void eat(Player player){
     for (String food: this.operationArguments) { //lorte udtryk
       boolean checkFood = player.consumeFood(food);
@@ -15,7 +17,6 @@ public class Eat extends Operation {
       }else{
         operationExecution += "You cant eat that shit bro \n";
       }
-
     }
   }
 }

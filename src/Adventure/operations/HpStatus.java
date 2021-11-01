@@ -10,7 +10,7 @@ public class HpStatus extends Operation{
   }
 
   private void evaluateHp(Player player){
-    int startHp = player.getStartHp();
+    int startHp = player.getMaxHp();
     int hp = player.getHp();
     this.operationExecution += "Your hp is: "+hp+" right now\n";
     if(hp > startHp * 0.75){
