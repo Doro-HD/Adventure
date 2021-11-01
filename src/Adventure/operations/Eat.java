@@ -8,7 +8,7 @@ public class Eat extends Operation {
     return true;
   }
   private void eat(Player player){
-    for (String food: this.operationArguments) { //lorte udtryk
+    for (String food: this.operationArguments) {
       boolean checkFood = player.consumeFood(food);
       if(checkFood){
         operationExecution += "You ate: " + food + "\n";
