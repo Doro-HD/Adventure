@@ -20,7 +20,7 @@ public abstract class Operation { //This is a abstract class which means, you ca
         this.operationArguments = operationArguments;
     }
 
-    public String toString() {
+    public String getOperationExecution() {
         return this.operationExecution;
     } //this returns a string which is being modified, beacuse the different methods change
     // the toString return value.

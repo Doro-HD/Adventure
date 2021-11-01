@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Player {
     private String name;
     private int hp;
-    private int startHp;
+    private int maxHp;
     private Weapon equippedWeapon;
     private ArrayList<Item> inventory;
     private Room currentRoom;
@@ -18,8 +18,8 @@ public class Player {
         this.setName(name);
         this.setCurrentRoom(startPosition);
         this.inventory = new ArrayList<>();
-        this.startHp = 200;
-        this.hp = this.startHp;
+        this.maxHp = 200;
+        this.hp = this.maxHp;
     }
 
     public String inventoryToString() {
@@ -140,15 +140,15 @@ public class Player {
     }
 
     public void setHp(int hp) {
-        this.hp = Math.min(hp,startHp);
+        this.hp = Math.min(hp, maxHp);
     }
 
-    public void setStartHp(int startHp) {
-        this.startHp = startHp;
+    public void setMaxHp(int maxHp) {
+        this.maxHp = maxHp;
     }
 
-    public int getStartHp() {
-        return startHp;
+    public int getMaxHp() {
+        return maxHp;
     }
 
     public int getHp() {

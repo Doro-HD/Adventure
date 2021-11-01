@@ -119,7 +119,7 @@ public class Delegator {
             operation.execute(player);
             //prints out the operation, Operation has a toString() that returns an attribute that is modified -
             //class that inherits from Operation
-            System.out.println(operation);
+            System.out.println(operation.getOperationExecution());
 
             //resets all attribute of the operation
             //the operationArgument arraylist is set to a new empty arraylist
