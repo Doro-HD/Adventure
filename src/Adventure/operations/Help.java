@@ -5,6 +5,7 @@ import Adventure.core.Player;
 public class Help extends Operation{
 
     public boolean execute(Player player) {
+        this.help();
         return true;
     }
 
