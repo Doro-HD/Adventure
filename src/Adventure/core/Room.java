@@ -10,6 +10,7 @@ public class Room {
     private String name;
     private String description;
     private ArrayList<Item> items;
+    private Enemy enemy;
 
     //Each exit is either a reference to another room or is null
     private Room northExit;
@@ -165,5 +166,9 @@ public class Room {
 
     public ArrayList<Item> getItems() {
         return this.items;
+    }
+
+    public Enemy getEnemy(){
+        return this.enemy;
     }
 }

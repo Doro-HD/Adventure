@@ -21,7 +21,7 @@ public class Eat extends Operation {
         case notUsable:
           this.operationExecution += food + " is not edible";
           break;
-        case notFound:
+        case itemNotFound:
           this.operationExecution += "There is no " + food + " in your inventory or room";
           break;
       }

@@ -9,7 +9,7 @@ public class RangedWeapon extends Weapon {
     this.ammunition = ammunition;
   }
 
-  public boolean useAble() {
+  public boolean isUseAble() {
     return this.ammunition > 0;
   }
 }

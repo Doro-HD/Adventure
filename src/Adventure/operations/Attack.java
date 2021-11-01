@@ -7,7 +7,7 @@ public class Attack extends Operation{
 
   public boolean execute(Player player) {
     this.playerAttack(player);
-    this.enemyAttack(enemy);
+    this.enemyAttack();
     return true;
   }
   private void playerAttack(Player player){

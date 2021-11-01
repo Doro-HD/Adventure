@@ -93,7 +93,7 @@ public class Player {
         //Finds a food item in the players inventory
         Item item = findItem(name);
         if (item == null) {
-            return Status.notFound;
+            return Status.itemNotFound;
         } else if (!(item instanceof Food)) {
             return Status.notUsable;
         } else {
@@ -115,6 +115,10 @@ public class Player {
         return this.currentRoom;
     }
 
+    public void setHp(int hp) {
+        this.hp = Math.min(hp,maxHp);
+    }
+
     public void setMaxHp(int maxHp) {
         this.maxHp = maxHp;
     }
@@ -125,5 +129,54 @@ public class Player {
 
     public int getHp() {
         return hp;
+    }
+
+    public Status checkAttack() {
+        Enemy enemy = this.currentRoom.getEnemy();
+        if (enemy == null) {
+            return Status.enemyNotFound;
+        } else if (this.equippedWeapon == null) {
+            return Status.itemNotFound;
+        } else if (this.equippedWeapon.isUseAble()) {
+            return Status.usable;
+        } else {
+            return Status.notUsable;
+        }
+    }
+
+    private boolean attackEnemy(Enemy enemy) {
+        enemy.takeDamage(this.equippedWeapon.getDamage());
+        boolean enemyIsDead = enemy.isDead();
+        if (enemyIsDead) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private boolean takeDamage(int damage){
+        int health = Math.max(this.hp,damage)-Math.min(this.hp,damage);
+        this.setHp(health);
+        return this.hp <= 0;
+    }
+
+    private boolean enemyAttack(Enemy enemy) {
+        boolean playerIsDead = takeDamage(enemy.getDamage());
+        if (playerIsDead) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private boolean attackSequence(Enemy enemy){
+        boolean enemyIsDead = this.attackEnemy(enemy);
+        if (enemyIsDead) {
+            return false;
+        }
+        boolean playerIsDead = this.enemyAttack(enemy);
+        if (playerIsDead) {
+            return true;
+        }
     }
 }

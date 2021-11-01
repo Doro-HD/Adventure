@@ -5,14 +5,14 @@ import Adventure.items.Weapon;
 public class Enemy {
     private String name;
     private int hp;
-    private int attack;
     private Room currentRoom;
+    private Weapon equippedWeapon;
 
 
-    public Enemy(String name, int hp, int attack){
+    public Enemy(String name, int hp, int attack, Weapon equippedWeapon){
         this.name = name;
         this.hp = hp;
-        this.attack = attack;
+        this.equippedWeapon = equippedWeapon;
     }
 
     public Boolean isDead(){
@@ -25,5 +25,13 @@ public class Enemy {
 
     public void takeDamage(int damage){
         this.hp = - damage;
+    }
+
+    public int getDamage(){
+        if (this.equippedWeapon == null) {
+            return 0;
+        } else {
+            return this.equippedWeapon.getDamage();
+        }
     }
 }

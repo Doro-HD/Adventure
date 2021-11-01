@@ -5,7 +5,7 @@ public class MeleeWeapon extends Weapon{
     super(name, description, type, damage);
   }
 
-  public boolean useAble() {
+  public boolean isUseAble() {
     return true;
   }
 }
