@@ -1,6 +1,8 @@
 package Adventure.core;
 
 import java.util.Scanner;
+
+import Adventure.operations.Help;
 import Adventure.util.Count;
 
 public class Controller {
@@ -22,8 +24,7 @@ public class Controller {
   }//This method prints out the different movements you can make.
 
   public static void startInfo() {
-    System.out.println("Welcome to this adventure game! Before we can start the game, I have a little guide just for you, so you know how to play!");
-    infoHelp();
+    System.out.println("Welcome Delusional Space Station Exploration! Before we can start the game, I have a little guide just for you, so you know how to play!");
     System.out.println("Forgot how to walk around? You can write 'info', 'i', 'help' or 'h' to get this guide again!");
     System.out.println("Tired of playing? Just type 'quit' or 'q' and I will close the game for you!\n");
   } //This method calls all the start information for the game, also tells the basis of the story.
