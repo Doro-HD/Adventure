@@ -26,17 +26,20 @@ public class Delegator {
         this.operationMap.put("take", new Take());
         this.operationMap.put("drop", new Drop());
         this.operationMap.put("equip", new Equip());
+        this.operationMap.put("attack", new Attack());
+        this.operationMap.put("exit", new Exit());
     }
 
     //Main method of this class, uses other private methods to delegate task into Adventure.operations
-    public void delegate(String userInput, Player player) {
+    public boolean delegate(String userInput, Player player) {
         ArrayList<String> userInputArray = new ArrayList<>(List.of(userInput.split("\s+"))); //"split it's a way to call a specific"
         //"\s+ - in this context mean 1 space or more"
 
         //this is the arraylist that contains the Adventure.operations that will be executed once they have been found
         ArrayList<Operation> operations = findOperations(userInputArray);
 
-        this.executeOperations(operations, player);
+        boolean continueGame = this.executeOperations(operations, player);
+        return continueGame;
     }
 
     //returns an arraylist of operation that it finds in the user's input
@@ -112,11 +115,11 @@ public class Delegator {
     }
 
     //Executes each operation in the arraylist passed to this method
-    private void executeOperations(ArrayList<Operation> operations, Player player) {
+    private boolean executeOperations(ArrayList<Operation> operations, Player player) {
         //Loops through each operation in the arraylist passed to this method and executes it
         for (Operation operation: operations) {
             //Executes the operation and gives the player as an argument to the execute method
-            operation.execute(player);
+            boolean continueGame = operation.execute(player);
             //prints out the operation, Operation has a toString() that returns an attribute that is modified -
             //class that inherits from Operation
             System.out.println(operation.getOperationExecution());
@@ -125,7 +128,12 @@ public class Delegator {
             //the operationArgument arraylist is set to a new empty arraylist
             //the string that is returned from the toString() method of Operation is set to an empty string
             operation.resetAttributes();
+
+            if (!continueGame) {
+                return false;
+            }
         }
+        return true;
     }
 }
 

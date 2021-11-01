@@ -4,5 +4,8 @@ public enum Status {
   usable,
   notUsable,
   itemNotFound,
-  enemyNotFound
+  playerIsDead,
+  enemyNotFound,
+  enemyIsDead,
+  enemyIsStillAlive
 }

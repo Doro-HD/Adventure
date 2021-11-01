@@ -131,6 +131,12 @@ public class Player {
         return hp;
     }
 
+    private boolean takeDamage(int damage){
+        int health = Math.max(this.hp,damage)-Math.min(this.hp,damage);
+        this.setHp(health);
+        return this.hp <= 0;
+    }
+
     public Status checkAttack() {
         Enemy enemy = this.currentRoom.getEnemy();
         if (enemy == null) {
@@ -138,9 +144,22 @@ public class Player {
         } else if (this.equippedWeapon == null) {
             return Status.itemNotFound;
         } else if (this.equippedWeapon.isUseAble()) {
-            return Status.usable;
+            return this.attackSequence(enemy);
         } else {
             return Status.notUsable;
+        }
+    }
+
+    private Status attackSequence(Enemy enemy){
+        boolean enemyIsDead = this.attackEnemy(enemy);
+        if (enemyIsDead) {
+            return Status.enemyIsDead;
+        }
+        boolean playerIsDead = this.enemyAttack(enemy);
+        if (playerIsDead) {
+            return Status.playerIsDead;
+        } else {
+            return Status.enemyIsStillAlive;
         }
     }
 
@@ -154,29 +173,12 @@ public class Player {
         }
     }
 
-    private boolean takeDamage(int damage){
-        int health = Math.max(this.hp,damage)-Math.min(this.hp,damage);
-        this.setHp(health);
-        return this.hp <= 0;
-    }
-
     private boolean enemyAttack(Enemy enemy) {
         boolean playerIsDead = takeDamage(enemy.getDamage());
         if (playerIsDead) {
             return true;
         } else {
             return false;
-        }
-    }
-
-    private boolean attackSequence(Enemy enemy){
-        boolean enemyIsDead = this.attackEnemy(enemy);
-        if (enemyIsDead) {
-            return false;
-        }
-        boolean playerIsDead = this.enemyAttack(enemy);
-        if (playerIsDead) {
-            return true;
         }
     }
 }

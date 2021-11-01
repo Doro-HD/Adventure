@@ -12,6 +12,7 @@ public class Count {
       secondsPassed++;
     }
   };
+
   public void start() {
     myTimer.scheduleAtFixedRate(task, 1000, 1000);
   }
