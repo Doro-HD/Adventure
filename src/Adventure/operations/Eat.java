@@ -10,13 +10,14 @@ public class Eat extends Operation {
   }
 
   private void eat(Player player){
-    for (String food: this.operationArguments) { //lorte udtryk
+    for (String food: this.operationArguments) {
       boolean checkFood = player.consumeFood(food);
       if(checkFood){
         operationExecution += "You ate: " + food + "\n";
       }else{
         operationExecution += "You cant eat that shit bro \n";
       }
+
     }
   }
 }
