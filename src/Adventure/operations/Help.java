@@ -52,9 +52,9 @@ public class Help extends Operation{
         return true;
     }
 
-    private void help() {
+    public void help() {
         this.operationExecution += """
-                Here are the following command:
+                Here are the following commands:
                 \tgo:
                 \t\tUsed to move around. For example type, 'go east', to move east.
                 
@@ -77,11 +77,21 @@ public class Help extends Operation{
                 \t\tUsed to equip a weapon from your inventory to yourself. For example type, 'equip dagger', to equip a dagger to yourself.
                 \t\tThe Weapon must be in your inventory before you can equip it
                 
+                \tattack:
+                \t\tUsed to attack an enemy. Simply type, 'attack', to attack the enemy in the room.
+                \t\tTo attack, you must have a weapon equipped and there have to be an enemy in the room you are in.
+                
                 \thealth:
                 \t\tUsed to check your current HP. Simply type, 'health', to get information about your current health.
                 
                 \tinventory:
                 \t\tUsed to check which items are in your possession. Simply type, 'inventory', to get information about your items.
+                
+                \thelp:
+                \t\tUsed to get this text box again, if you cannot remember which commands to use. Just type, 'help' and get this message again.
+                
+                \texit:
+                \t\tUsed to close the game, if you no longer wish to play.
                 """;
     }
 
