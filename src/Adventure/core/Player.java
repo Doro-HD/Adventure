@@ -20,7 +20,7 @@ public class Player {
         this.setCurrentRoom(startPosition);
         this.inventory = new ArrayList<>();
         this.setMaxHp(200);
-        this.hp = this.maxHp;
+        this.hp = 100;
     }
 
     public String inventoryToString() {

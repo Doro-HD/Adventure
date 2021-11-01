@@ -58,7 +58,7 @@ public class Map {
         Room room8 = new Room("Escape pod bay","Surrounding the room is 8 pod rooms. The 7 empty pod rooms signals that people have already tried to escape the space station.\nWait, what is that? By the only pod left is.. A body?! A dead body!\nSomeone from your crew has died trying to escape.");
         Room room9 = new Room("Sleeping quarters","Nothing much is in this room besides a bunch of empty bunk beds.\nOn the ground is a couple of bags, probably filled with clothes.");
 
-        Enemy enemy1 = new Enemy("fjende1",180,room2,enemyWeapon1);
+        Enemy enemy1 = new Enemy("fjende1","grim",180,room2,enemyWeapon1);
 
         room2.setEnemy(enemy1);
         room3.addToItems(food1);
