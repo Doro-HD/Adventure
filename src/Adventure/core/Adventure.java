@@ -28,7 +28,7 @@ public class Adventure {
         help.execute(player);
         System.out.println(help.getOperationExecution());
 
-        System.out.println("I think you are ready now.. Let's go a head and start this adventure!");
+        System.out.println("I think you are ready now.. Let's go ahead and start this adventure!");
         System.out.println("A mechanical noise is filling your ears and it feels like the ground beneath is moving.. Oh! That's right. " +
                 "You are on Mo's Space Station!\nWhy don't you have a look around?");
 
