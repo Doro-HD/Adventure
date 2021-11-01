@@ -1,15 +1,12 @@
 package Adventure.core;
 
 import java.util.Scanner;
-
-import Adventure.operations.Help;
 import Adventure.util.Count;
 
 public class Controller {
   Scanner input = new Scanner(System.in);
   private final Player creator; //Making an attribute  called creater from the player class
   Count count = new Count();
-  Help help = new Help();
 
 
   public Controller(Player creator){
@@ -18,7 +15,7 @@ public class Controller {
 
 
   public static void startInfo() {
-    System.out.println("Welcome to this adventure game! Before we can start the game, I have a little guide just for you, so you know how to play!");
+    System.out.println("Welcome to Delusional Space Station Exploration Game! Before we can start the game, I have a little guide just for you, so you know how to play!");
   } //This method calls all the start information for the game
 
   public boolean goNorth(){     //This referring to the player class, and checks if the northExit!=null, if it is
