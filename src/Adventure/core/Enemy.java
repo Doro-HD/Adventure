@@ -16,7 +16,13 @@ public class Enemy {
     }
 
     public Boolean isDead(){
-       return this.hp <= 0;
+       boolean isDead = this.hp <= 0;
+
+       if (isDead) {
+           this.currentRoom.recievePlayerItem(this.equippedWeapon);
+           this.currentRoom.setEnemy(null);
+       }
+       return isDead;
     }
 
     public int showEnemyHp(){
@@ -24,7 +30,8 @@ public class Enemy {
     }
 
     public void takeDamage(int damage){
-        this.hp = - damage;
+        this.hp -= damage;
+        System.out.println("The enemy has " + this.hp + " hp left");
     }
 
     public int getDamage(){

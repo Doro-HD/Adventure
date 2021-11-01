@@ -97,8 +97,13 @@ public class Player {
         } else if (!(item instanceof Food)) {
             return Status.notUsable;
         } else {
+            this.heal(((Food) item).getHealingHp());
             return Status.usable;
         }
+    }
+
+    public void heal(int healingHp) {
+        this.setHp(healingHp + this.hp);
     }
 
     public boolean equipWeapon(String weaponType) {
@@ -117,6 +122,7 @@ public class Player {
 
     public void setHp(int hp) {
         this.hp = Math.min(hp,maxHp);
+        System.out.println("your hp is " + this.hp + ".");
     }
 
     public void setMaxHp(int maxHp) {
