@@ -1,8 +1,8 @@
 package Adventure.operations;
-
 import Adventure.core.Player;
 
 public class Eat extends Operation {
+  enum status{notFound, usable, nonUsable}
   public boolean execute(Player player) {
     eat(player);
     return true;
