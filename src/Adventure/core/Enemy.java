@@ -9,7 +9,7 @@ public class Enemy {
     private Weapon equippedWeapon;
 
 
-    public Enemy(String name, int hp, int attack, Weapon equippedWeapon){
+    public Enemy(String name, int hp, Weapon equippedWeapon){
         this.name = name;
         this.hp = hp;
         this.equippedWeapon = equippedWeapon;
